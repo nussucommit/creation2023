@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ./pages/**.jsx",
-    "lint:fix": "eslint --fix ./pages/**.jsx",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "eslint --fix . --ext .js,.jsx",
     "prepare": "husky install"
   },
   "dependencies": {
