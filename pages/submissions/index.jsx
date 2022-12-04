@@ -1,5 +1,5 @@
 function SubmissionPage() {
-  return <div>SubmissionPage</div>;
+  return <h1>SubmissionPage</h1>;
 }
 
 export default SubmissionPage;

@@ -1,5 +1,5 @@
 function RulePage() {
-  return <div>RulePage</div>;
+  return <h1>RulePage</h1>;
 }
 
 export default RulePage;
