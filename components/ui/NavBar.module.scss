@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.navbar {
+  display: flex;
+  padding: $padding-base;
+}
+
+.navbar > * {
+  margin: $padding-base;
+}
