@@ -18,7 +18,9 @@ function AnnouncementManager() {
     // eslint-disable-next-line no-alert
     alert(data.message);
 
-    router.push('/announcements');
+    if (data.success) {
+      router.push('/announcements');
+    }
   };
 
   return <NewAnnouncementForm onAddAnnouncement={addAnnouncementHandler} />;

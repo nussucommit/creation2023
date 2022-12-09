@@ -18,16 +18,9 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
   const submitHandler = async (event) => {
     event.preventDefault();
 
-    // Check admin password
-    const enteredPassword = passwordInputRef.current.value;
-    if (enteredPassword !== process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-      // eslint-disable-next-line no-alert
-      alert('Wrong Password!');
-      return;
-    }
-
     const enteredTitle = titleInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
     const currentDatetime = new Date();
     const currentDatetimeString = `${currentDatetime.getDate()}/${
       currentDatetime.getMonth() + 1
@@ -37,6 +30,7 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
       title: enteredTitle,
       description: enteredDescription,
       datetime: currentDatetimeString,
+      enteredPassword,
       mediaURL: '',
     };
 
