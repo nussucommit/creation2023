@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-async function addAnnouncementAPI(req, res) {
+async function addAnnouncement(req, res) {
   if (req.method === 'POST') {
     const data = req.body;
     const { enteredPassword, ...announcementData } = data;
@@ -27,4 +27,4 @@ async function addAnnouncementAPI(req, res) {
   }
 }
 
-export default addAnnouncementAPI;
+export default addAnnouncement;
