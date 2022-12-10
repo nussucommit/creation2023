@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import storage from '../../firebase/firebase-config';
 import allowedImageTypes from '../../constants/allowedImageTypes';
 import allowedVideoTypes from '../../constants/allowedVideoTypes';
@@ -11,6 +11,7 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
   const descriptionInputRef = useRef();
   const passwordInputRef = useRef();
   const [mediaFile, setMediaFile] = useState();
+  const [uploadProgress, setUploadProgress] = useState();
 
   const uploadHandler = (event) => {
     event.preventDefault();
@@ -53,15 +54,29 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
       const modifiedMediaName = `announcement_${Date.now()}`;
       const mediaStorageLocation = `announcements/${modifiedMediaName}`;
       const mediaStorageRef = ref(storage, mediaStorageLocation);
-      await uploadBytes(mediaStorageRef, mediaFile);
-      getDownloadURL(mediaStorageRef)
-        .then(async (mediaURL) => {
-          announcementData.mediaURL = mediaURL;
+      const uploadTask = uploadBytesResumable(mediaStorageRef, mediaFile);
 
-          await onAddAnnouncement(announcementData);
-        })
-        // eslint-disable-next-line no-alert
-        .catch((error) => alert(error.message, 'error'));
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(`${progress}%`);
+        },
+        (error) => {
+          // eslint-disable-next-line no-alert
+          alert(error.message, 'error');
+        },
+        () => {
+          getDownloadURL(mediaStorageRef)
+            .then(async (mediaURL) => {
+              announcementData.mediaURL = mediaURL;
+
+              await onAddAnnouncement(announcementData);
+            })
+            // eslint-disable-next-line no-alert
+            .catch((error) => alert(error.message, 'error'));
+        },
+      );
     } else {
       await onAddAnnouncement(announcementData);
     }
@@ -118,7 +133,11 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
       </label>
 
       <hr />
-      <button type="submit">Add Announcement</button>
+      {uploadProgress ? (
+        <p>{uploadProgress}</p>
+      ) : (
+        <button type="submit">Add Announcement</button>
+      )}
     </form>
   );
 }
