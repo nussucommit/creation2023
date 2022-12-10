@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import NewAnnouncementForm from '../../components/announcement/NewAnnouncementForm';
+import NewAnnouncementForm from '../../../components/announcement/NewAnnouncementForm';
 
 function AnnouncementManager() {
   const router = useRouter();
