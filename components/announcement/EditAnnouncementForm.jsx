@@ -6,7 +6,11 @@ import storage from '../../firebase/firebase-config';
 import allowedImageTypes from '../../constants/allowedImageTypes';
 import allowedVideoTypes from '../../constants/allowedVideoTypes';
 
-function EditAnnouncementForm({ announcementData, onEditAnnouncement }) {
+function EditAnnouncementForm({
+  announcementData,
+  onEditAnnouncement,
+  onCancelEdit,
+}) {
   const titleInputRef = useRef(announcementData.title);
   const descriptionInputRef = useRef(announcementData.description);
   const [mediaFile, setMediaFile] = useState();
@@ -103,6 +107,11 @@ function EditAnnouncementForm({ announcementData, onEditAnnouncement }) {
 
       <hr />
       <button type="submit">Update Announcement</button>
+      <br />
+      <br />
+      <button type="button" onClick={onCancelEdit}>
+        Cancel
+      </button>
     </form>
   );
 }
@@ -110,6 +119,7 @@ function EditAnnouncementForm({ announcementData, onEditAnnouncement }) {
 EditAnnouncementForm.propTypes = {
   announcementData: PropTypes.objectOf(PropTypes.string).isRequired,
   onEditAnnouncement: PropTypes.func.isRequired,
+  onCancelEdit: PropTypes.func.isRequired,
 };
 
 export default EditAnnouncementForm;

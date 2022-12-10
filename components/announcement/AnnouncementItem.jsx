@@ -89,6 +89,7 @@ function AnnouncementItem({ announcementData, isEditable }) {
     <EditAnnouncementForm
       announcementData={announcementData}
       onEditAnnouncement={updateAnnouncementHandler}
+      onCancelEdit={() => setIsEditing(false)}
     />
   ) : (
     <>
