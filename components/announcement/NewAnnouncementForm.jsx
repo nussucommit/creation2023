@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 import storage from '../../firebase/firebase-config';
+import allowedImageTypes from '../../constants/allowedImageTypes';
+import allowedVideoTypes from '../../constants/allowedVideoTypes';
 
 function NewAnnouncementForm({ onAddAnnouncement }) {
   const titleInputRef = useRef();
@@ -32,9 +34,21 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
       datetime: currentDatetimeString,
       enteredPassword,
       mediaURL: '',
+      mediaType: '',
     };
 
     const mediaUploaded = !!mediaFile;
+    if (
+      allowedImageTypes.includes(mediaFile.type)
+      || allowedVideoTypes.includes(mediaFile.type)
+    ) {
+      announcementData.mediaType = mediaFile.type;
+    } else {
+      // eslint-disable-next-line no-alert
+      alert('Please upload supported media types only!');
+      return;
+    }
+
     if (mediaUploaded) {
       const modifiedMediaName = `announcement_${Date.now()}`;
       const mediaStorageLocation = `announcements/${modifiedMediaName}`;
@@ -42,7 +56,7 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
       await uploadBytes(mediaStorageRef, mediaFile);
       getDownloadURL(mediaStorageRef)
         .then(async (mediaURL) => {
-          announcementData[mediaURL] = mediaURL;
+          announcementData.mediaURL = mediaURL;
 
           await onAddAnnouncement(announcementData);
         })
