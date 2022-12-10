@@ -1,13 +1,13 @@
 function authorize(req, res) {
-  const { password } = req.body;
+  const enteredPassword = req.query.password;
 
-  if (password === process.env.ADMIN_PASSWORD) {
-    res.status(401).json({ success: false, message: 'Wrong password!' });
-  } else {
+  if (enteredPassword === process.env.ADMIN_PASSWORD) {
     res.status(200).json({
       success: true,
       message: 'Authorized! You may manage announcements now.',
     });
+  } else {
+    res.status(401).json({ success: false, message: 'Wrong password!' });
   }
 }
 
