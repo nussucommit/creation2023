@@ -1,10 +1,32 @@
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 
 function AnnouncementItem({ announcementData, isEditable }) {
+  const router = useRouter();
   const hasMedia = !!announcementData.mediaURL;
   const mediaType = hasMedia && announcementData.mediaType.split('/')[0];
   const isImage = hasMedia && mediaType === 'image';
   const isVideo = hasMedia && mediaType === 'video';
+
+  const deleteAnnouncementHandler = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch(
+      `/api/delete-announcement?id=${encodeURIComponent(announcementData.id)}`,
+      {
+        method: 'DELETE',
+      },
+    );
+
+    const data = await response.json();
+
+    // eslint-disable-next-line no-alert
+    alert(data.message);
+
+    if (data.success) {
+      router.push('/announcements');
+    }
+  };
 
   return (
     <>
@@ -14,7 +36,9 @@ function AnnouncementItem({ announcementData, isEditable }) {
       {isEditable && (
         <>
           <button type="button">Edit</button>
-          <button type="button">Delete</button>
+          <button type="button" onClick={deleteAnnouncementHandler}>
+            Delete
+          </button>
         </>
       )}
       <p>{announcementData.datetime}</p>
