@@ -16,9 +16,7 @@ function AnnouncementItem({ announcementData, isEditable }) {
   const isImage = hasMedia && mediaType === 'image';
   const isVideo = hasMedia && mediaType === 'video';
 
-  const deleteAnnouncementHandler = async (event) => {
-    event.preventDefault();
-
+  const deleteAnnouncementHandler = async () => {
     const response = await fetch(
       `/api/delete-announcement?id=${encodeURIComponent(announcementData.id)}`,
       {
@@ -41,6 +39,15 @@ function AnnouncementItem({ announcementData, isEditable }) {
           // eslint-disable-next-line no-alert
           alert(error.message);
         });
+    }
+  };
+
+  const deleteAnnouncementPrompt = (event) => {
+    event.preventDefault();
+
+    // eslint-disable-next-line no-restricted-globals, no-alert
+    if (confirm('Are you sure you want to delete this announcement?')) {
+      deleteAnnouncementHandler();
     }
   };
 
@@ -93,7 +100,7 @@ function AnnouncementItem({ announcementData, isEditable }) {
           <button type="button" onClick={() => setIsEditing(true)}>
             Edit
           </button>
-          <button type="button" onClick={deleteAnnouncementHandler}>
+          <button type="button" onClick={deleteAnnouncementPrompt}>
             Delete
           </button>
         </>
