@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import PageContainer from '../components/layout/PageContainer';
 import NavBar from '../components/ui/NavBar';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (

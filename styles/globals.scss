@@ -1,0 +1,41 @@
+@import './variables.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $text-font-family;
+  font-size: $text-sm;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* HTML heading tags */
+h1 {
+  /* All page title */
+  font-family: $title-font-family;
+  font-size: $text-xl;
+}
+
+h2 {
+  /* Title for prize rank, partner category, announcement title and faq question */
+  font-size: $text-lg;
+}
+
+h3 {
+  /* Emphasized title such as prize name and timeline date */
+  font-size: $text-md;
+}
+
+h4, h5, h6, p, a {
+  /* Everything else */
+  font-size: $text-sm;
+}
+
