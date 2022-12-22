@@ -2,16 +2,22 @@
 
 $padding-base: 16px;
 
+/* Breakpoints */
+$sm: 600px;
+$md: 900px;
+$lg: 1200px;
+$xl: 1536px;
+
 /* Color palette */
-$primary-section-color: #FFF5F3;
-$primary-text-color: #DF6C5D;
-$primary-divider-color: #DF6C5D;
+$primary-section-color: #fff5f3;
+$primary-text-color: #df6c5d;
+$primary-divider-color: #df6c5d;
 
-$secondary-section-color: #DF6C5D;
-$secondary-text-color: #FFFFFF;
-$secondary-divider-color: #FFFFFF;
+$secondary-section-color: #df6c5d;
+$secondary-text-color: #ffffff;
+$secondary-divider-color: #ffffff;
 
-$box-background-color: #FFE7E3;
+$box-background-color: #ffe7e3;
 
 /* Font Family */
 $title-font-family: Kavoon;
