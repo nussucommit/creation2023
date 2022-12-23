@@ -1,10 +1,122 @@
 @import '../../styles/variables.scss';
 
-.navbar {
-  display: flex;
+/* Container for both navigation bar and side navigation */
+.nav-container {
   padding: $padding-base;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar > * {
-  margin: $padding-base;
+.nav-container button {
+  border: none;
+  background-color: inherit;
+}
+
+/* Side navigation for mobile view */
+.sidenav-menu {
+  color: $primary-text-color;
+  font-size: $text-sm;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $secondary-section-color;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav * {
+  padding: calc($padding-base / 2) calc($padding-base * 2);
+  color: $secondary-text-color;
+  font-size: $text-sm;
+}
+
+.sidenav > button {
+  width: 100%;
+  text-align: end;
+}
+
+.sidenav a {
+  color: $secondary-text-color;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav > button:hover,
+.sidenav a:hover {
+  background-color: $primary-section-color;
+  color: $primary-text-color;
+}
+
+.topnav > * {
+  margin: $margin-base;
+  color: $primary-text-color;
+}
+
+.topnav > :first-child {
+  font-family: $title-font-family;
+}
+
+/* Hide topnav links on mobile view */
+.topnav > *:not(:first-child) {
+  display: none;
+}
+
+@media only screen and (min-width: $lg) {
+  /* Hide sidenav on desktop view */
+  .sidenav,
+  .sidenav-menu {
+    display: none;
+  }
+
+  /* Show topnav links on desktop view */
+  .topnav > *:not(:first-child) {
+    display: inline-block;
+  }
+
+  .topnav > *:hover:not(:first-child),
+  .link-current {
+    text-decoration: underline;
+    text-underline-offset: 0.5em;
+    text-decoration-thickness: 3px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    background-color: $box-background-color;
+    position: absolute;
+    width: max-content;
+    /* Center drop down */
+    left: 50%;
+    transform: translate(-50%, -7.5%);
+  }
+
+  .dropdown-content a {
+    padding: 15px 25.5px;
+    display: block;
+  }
+
+  /* Show drop down on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change color on hover over drop down links */
+  .dropdown-content a:hover {
+    background-color: $secondary-section-color;
+    color: $secondary-text-color;
+  }
 }
