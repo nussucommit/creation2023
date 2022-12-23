@@ -9,8 +9,9 @@
   align-items: center;
 }
 
-.height-restrict {
-  height: 100vh;
+/* Enable snap scrolling effect on homepage */
+.snap-start {
+  scroll-snap-align: start;
 }
 
 .primary-section {

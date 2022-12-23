@@ -7,12 +7,6 @@ import styles from './SectionContainer.module.scss';
 
 function SectionContainer({ sectionCount, sectionIndex, content }) {
   const [windowWidth, setWindowWidth] = useState(0);
-  const heightRestrictClass = sectionCount > 1 && windowWidth > BREAKPOINTS.md
-    ? styles['height-restrict']
-    : '';
-  const sectionClass = sectionIndex % 2 === 0
-    ? styles['primary-section']
-    : styles['secondary-section'];
 
   useEffect(() => {
     function handleResize() {
@@ -28,13 +22,20 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
     };
   }, [setWindowWidth]);
 
+  const snapStartClass = sectionCount > 1 && windowWidth > BREAKPOINTS.lg
+    ? styles['snap-start']
+    : '';
+  const sectionClass = sectionIndex % 2 === 0
+    ? styles['primary-section']
+    : styles['secondary-section'];
+
   return (
-    <div
-      className={`${styles['section-container']} ${heightRestrictClass} ${sectionClass}`}
+    <section
+      className={`${styles['section-container']} ${snapStartClass} ${sectionClass}`}
     >
       {sectionIndex === 0 && <NavBar />}
       {content}
-    </div>
+    </section>
   );
 }
 
