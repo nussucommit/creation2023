@@ -10,6 +10,9 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
   const heightRestrictClass = sectionCount > 1 && windowWidth > BREAKPOINTS.md
     ? styles['height-restrict']
     : '';
+  const sectionClass = sectionIndex % 2 === 0
+    ? styles['primary-section']
+    : styles['secondary-section'];
 
   useEffect(() => {
     function handleResize() {
@@ -26,7 +29,9 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
   }, [setWindowWidth]);
 
   return (
-    <div className={`${styles['section-container']} ${heightRestrictClass}`}>
+    <div
+      className={`${styles['section-container']} ${heightRestrictClass} ${sectionClass}`}
+    >
       {sectionIndex === 0 && <NavBar />}
       {content}
     </div>

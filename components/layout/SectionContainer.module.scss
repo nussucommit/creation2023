@@ -12,3 +12,13 @@
 .height-restrict {
   height: 100vh;
 }
+
+.primary-section {
+  background-color: $primary-section-color;
+  color: $primary-text-color;
+}
+
+.secondary-section {
+  background-color: $secondary-section-color;
+  color: $secondary-text-color;
+}
