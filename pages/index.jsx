@@ -8,6 +8,7 @@ function HomePage() {
         <h1 key="challenge-overview">Overview of Challenges</h1>,
         <h1 key="competition-timeline">Competition Timeline</h1>,
         <h1 key="prizes">Prizes</h1>,
+        <h1 key="partners">Partners</h1>,
         <h1 key="sponsors">Sponsors</h1>,
       ]}
     />

@@ -27,8 +27,8 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
     ? styles['snap-start']
     : '';
 
-  // Alternate the background color and text color of the section
-  const sectionClass = sectionIndex % 2 === 0
+  // Alternate the background color and text color of the section, except for last section
+  const sectionClass = sectionIndex % 2 === 0 || sectionIndex === sectionCount - 1
     ? styles['primary-section']
     : styles['secondary-section'];
 
