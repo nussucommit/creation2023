@@ -6,6 +6,9 @@ import AnnouncementItem from '../../components/announcement/AnnouncementItem';
 
 function AnnouncementPage({ isAuthorized, announcements }) {
   const hasAnnouncement = announcements.length !== 0;
+  if (hasAnnouncement) {
+    announcements.reverse();
+  }
 
   return (
     <PageContainer
