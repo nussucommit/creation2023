@@ -1,10 +1,12 @@
 @import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Inter');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: $text-font-family;
+  font-family: -apple-system, Inter, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
   font-size: $text-sm;
 }
 
@@ -20,7 +22,7 @@ a {
 /* HTML heading tags */
 h1 {
   /* All page title */
-  font-family: $title-font-family;
+  font-family: 'Kavoon';
   font-size: $text-xl;
 }
 

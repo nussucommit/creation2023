@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&family=Inter');
 
 /* Container for both navigation bar and side navigation */
 .nav-container {
@@ -61,7 +62,7 @@
 }
 
 .topnav > :first-child {
-  font-family: $title-font-family;
+  font-family: 'Kavoon';
 }
 
 /* Hide topnav links on mobile view */
