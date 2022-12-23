@@ -4,15 +4,11 @@
   padding: $padding-base;
   width: 100%;
   min-height: 100vh;
+  overflow-y: scroll;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* If not homepage, the section height should fit the content */
-.height-content {
-  min-height: auto;
-  height: max-content;
 }
 
 /* Enable snap scrolling effect on homepage */

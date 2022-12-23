@@ -23,7 +23,6 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
   }, [setWindowWidth]);
 
   // Set section container height and scrolling effect depending on whether it has one section only
-  const singleSectionClass = sectionCount === 1 ? styles['height-content'] : '';
   const snapStartClass = sectionCount > 1 && windowWidth > BREAKPOINTS.lg
     ? styles['snap-start']
     : '';
@@ -35,7 +34,7 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
 
   return (
     <section
-      className={`${styles['section-container']} ${singleSectionClass} ${snapStartClass} ${sectionClass}`}
+      className={`${styles['section-container']} ${snapStartClass} ${sectionClass}`}
     >
       {sectionIndex === 0 && <NavBar />}
       {content}
