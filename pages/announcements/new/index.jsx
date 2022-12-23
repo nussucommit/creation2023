@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+
+import PageContainer from '../../../components/layout/PageContainer';
 import NewAnnouncementForm from '../../../components/announcement/NewAnnouncementForm';
 
 function AnnouncementManager() {
@@ -23,7 +25,13 @@ function AnnouncementManager() {
     }
   };
 
-  return <NewAnnouncementForm onAddAnnouncement={addAnnouncementHandler} />;
+  return (
+    <PageContainer
+      sectionContents={[
+        <NewAnnouncementForm onAddAnnouncement={addAnnouncementHandler} />,
+      ]}
+    />
+  );
 }
 
 export default AnnouncementManager;

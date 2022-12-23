@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import PageContainer from '../../components/layout/PageContainer';
 
 function ChallengeDetailPage() {
   const router = useRouter();
@@ -6,10 +7,7 @@ function ChallengeDetailPage() {
   const { challengeId } = router.query;
 
   return (
-    <div>
-      Challenge #
-      {challengeId}
-    </div>
+    <PageContainer sectionContents={[<h1>{`Challenge #${challengeId}`}</h1>]} />
   );
 }
 

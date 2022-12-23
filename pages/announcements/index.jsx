@@ -1,25 +1,31 @@
 import { MongoClient } from 'mongodb';
 import PropTypes from 'prop-types';
+
+import PageContainer from '../../components/layout/PageContainer';
 import AnnouncementItem from '../../components/announcement/AnnouncementItem';
 
 function AnnouncementPage({ isAuthorized, announcements }) {
   const hasAnnouncement = announcements.length !== 0;
 
   return (
-    <div>
-      <h1>Announcements</h1>
-      <ul>
-        {hasAnnouncement
-          && announcements.map((announcementData) => (
-            <AnnouncementItem
-              key={announcementData.id}
-              announcementData={announcementData}
-              isEditable={isAuthorized}
-            />
-          ))}
-      </ul>
-      {!hasAnnouncement && <p>No announcement at the moment...</p>}
-    </div>
+    <PageContainer
+      sectionContents={[
+        <div>
+          <h1>Announcements</h1>
+          <ul>
+            {hasAnnouncement
+              && announcements.map((announcementData) => (
+                <AnnouncementItem
+                  key={announcementData.id}
+                  announcementData={announcementData}
+                  isEditable={isAuthorized}
+                />
+              ))}
+          </ul>
+          {!hasAnnouncement && <p>No announcement at the moment...</p>}
+        </div>,
+      ]}
+    />
   );
 }
 
