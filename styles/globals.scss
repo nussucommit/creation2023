@@ -4,7 +4,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: $text-font-family;
+  font-family: 'Inter', sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: $text-sm;
 }
 
@@ -20,7 +21,7 @@ a {
 /* HTML heading tags */
 h1 {
   /* All page title */
-  font-family: $title-font-family;
+  font-family: 'Kavoon', cursive;
   font-size: $text-xl;
 }
 
