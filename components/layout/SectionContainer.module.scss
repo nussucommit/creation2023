@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.section-container {
+  padding: $padding-base;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.height-restrict {
+  height: 100vh;
+}
