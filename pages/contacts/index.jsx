@@ -9,10 +9,13 @@ function ContactPage() {
           <p>
             Please submit your inquiry to
             {' '}
-            <a href="mailto: creation@nussucommit.com">
+            <a
+              href="mailto: creation@nussucommit.com"
+              style={{ textDecoration: 'underline' }}
+            >
               creation@nussucommit.com
             </a>
-            . Thank you :).
+            . Thank you :)
           </p>
         </>,
       ]}
