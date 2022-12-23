@@ -1,13 +1,27 @@
 import PropTypes from 'prop-types';
 
+import SectionContainer from './SectionContainer';
 import styles from './PageContainer.module.scss';
 
-function Container({ children }) {
-  return <div className={styles.container}>{children}</div>;
+function PageContainer({ sectionContents }) {
+  return (
+    <div className={styles['page-container']}>
+      {sectionContents.map((sectionContent, index) => (
+        <SectionContainer
+          key={sectionContent.key}
+          sectionCount={sectionContents.length}
+          sectionIndex={index}
+          content={sectionContent}
+        />
+      ))}
+    </div>
+  );
 }
 
-Container.propTypes = {
-  children: PropTypes.node.isRequired,
+PageContainer.propTypes = {
+  sectionContents: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.elementType, PropTypes.node]),
+  ).isRequired,
 };
 
-export default Container;
+export default PageContainer;

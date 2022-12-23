@@ -93,9 +93,9 @@ function AnnouncementItem({ announcementData, isEditable }) {
     />
   ) : (
     <>
-      <h1>
+      <h2>
         <li>{announcementData.title}</li>
-      </h1>
+      </h2>
       {isEditable && (
         <>
           <button type="button" onClick={() => setIsEditing(true)}>
@@ -108,7 +108,11 @@ function AnnouncementItem({ announcementData, isEditable }) {
       )}
       <p>{announcementData.datetime}</p>
       {hasMedia && isImage && (
-        <img src={announcementData.mediaURL} alt="announcement media" />
+        <img
+          src={announcementData.mediaURL}
+          alt="announcement media"
+          width="100%"
+        />
       )}
       {hasMedia && isVideo && (
         // eslint-disable-next-line jsx-a11y/media-has-caption

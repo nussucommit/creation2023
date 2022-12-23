@@ -1,5 +1,7 @@
+import PageContainer from '../../components/layout/PageContainer';
+
 function SubmissionPage() {
-  return <h1>SubmissionPage</h1>;
+  return <PageContainer sectionContents={[<h1>Submission Page</h1>]} />;
 }
 
 export default SubmissionPage;

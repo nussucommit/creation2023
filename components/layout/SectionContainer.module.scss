@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.section-container {
+  padding: $padding-base;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Enable snap scrolling effect on homepage */
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.primary-section {
+  background-color: $primary-section-color;
+  color: $primary-text-color;
+}
+
+.secondary-section {
+  background-color: $secondary-section-color;
+  color: $secondary-text-color;
+}

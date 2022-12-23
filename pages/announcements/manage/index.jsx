@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 
 import { MongoClient } from 'mongodb';
 import PropTypes from 'prop-types';
+
+import PageContainer from '../../../components/layout/PageContainer';
 import AnnouncementPage from '..';
 
 function AnnouncementManagementPage({ announcements }) {
@@ -33,21 +35,25 @@ function AnnouncementManagementPage({ announcements }) {
   return authorized ? (
     <AnnouncementPage isAuthorized={authorized} announcements={announcements} />
   ) : (
-    <form onSubmit={authorizeHandler}>
-      <label htmlFor="admin-password">
-        Admin Password:
-        <br />
-        <input
-          id="admin-password"
-          type="password"
-          ref={passwordInputRef}
-          required
-        />
-      </label>
-      <br />
-      <br />
-      <button type="submit">Manage announcement</button>
-    </form>
+    <PageContainer
+      sectionContents={[
+        <form onSubmit={authorizeHandler}>
+          <label htmlFor="admin-password">
+            Admin Password:
+            <br />
+            <input
+              id="admin-password"
+              type="password"
+              ref={passwordInputRef}
+              required
+            />
+          </label>
+          <br />
+          <br />
+          <button type="submit">Manage announcement</button>
+        </form>,
+      ]}
+    />
   );
 }
 

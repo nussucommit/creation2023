@@ -1,8 +1,17 @@
 @import '../../styles/variables.scss';
 
-.container {
-  padding: $padding-base;
+.page-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media only screen and (min-width: $lg) {
+  /* Enable snap scrolling effect on homepage */
+  .page-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
 }

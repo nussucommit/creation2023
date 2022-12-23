@@ -39,15 +39,17 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
     };
 
     const mediaUploaded = !!mediaFile;
-    if (
-      allowedImageTypes.includes(mediaFile.type)
-      || allowedVideoTypes.includes(mediaFile.type)
-    ) {
-      announcementData.mediaType = mediaFile.type;
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Please upload supported media types only!');
-      return;
+    if (mediaUploaded) {
+      if (
+        allowedImageTypes.includes(mediaFile.type)
+        || allowedVideoTypes.includes(mediaFile.type)
+      ) {
+        announcementData.mediaType = mediaFile.type;
+      } else {
+        // eslint-disable-next-line no-alert
+        alert('Please upload supported media types only!');
+        return;
+      }
     }
 
     if (mediaUploaded) {

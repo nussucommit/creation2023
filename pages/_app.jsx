@@ -1,18 +1,9 @@
 import PropTypes from 'prop-types';
 
-import PageContainer from '../components/layout/PageContainer';
-import NavBar from '../components/ui/NavBar';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <NavBar />
-      <PageContainer>
-        <Component {...pageProps} />
-      </PageContainer>
-    </>
-  );
+  return <Component {...pageProps} />;
 }
 
 MyApp.propTypes = {

@@ -36,7 +36,7 @@ export const CHALLENGE_LINKS = [
   },
   {
     path: '/challenges/3',
-    title: 'Challenge #4',
+    title: 'Challenge #3',
   },
   {
     path: '/challenges/4',
