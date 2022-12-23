@@ -63,8 +63,7 @@ function TopNav() {
 function SideNav() {
   const [sidenavWidth, setSidenavWidth] = useState('0%');
 
-  const toggleSidenav = (e) => {
-    e.preventDefault();
+  const toggleSidenav = () => {
     const openWidth = window.innerWidth > BREAKPOINTS.sm ? '50%' : '100%';
     setSidenavWidth((prevWidth) => (prevWidth === '0%' ? openWidth : '0%'));
   };
