@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+/* If not homepage, the section height should fit the content */
+.height-content {
+  min-height: auto;
+  height: max-content;
+}
+
 /* Enable snap scrolling effect on homepage */
 .snap-start {
   scroll-snap-align: start;
