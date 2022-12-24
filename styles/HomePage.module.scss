@@ -1,60 +1,83 @@
 @import './variables.scss';
 
-/* Content containers */
 .content-container {
+  flex: 1; /* Fill up the space vertically */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  row-gap: normal;
+  justify-content: center;
+  align-items: center;
+  row-gap: $gap-base;
 }
 
-/* Content title */
-.content-container > h1 {
+.content-container h1,
+.content-container h2 {
   width: 100%;
+  text-align: center;
 }
 
+/* Overview of Challenges section */
+.content-container > .challenge-overview-item > hr {
+  border: $divider-thin solid $secondary-text-color;
+}
+
+.content-container > .challenge-overview-item > a {
+  text-decoration: underline;
+}
+
+/* Competition Timeline section */
+.content-container > .competition-timeline-item > hr {
+  border: $divider-thin solid $primary-text-color;
+}
+
+/* Prizes section */
+.content-container > .prize-item {
+  text-align: center;
+}
+
+/* Small screen view */
 @media only screen and (min-width: $sm) {
-  /* Use direct child selecter to increase specificity */
+  /* Prizes section */
+  .content-container > .prize-item > img {
+    width: 100%;
+  }
+
+  .content-container > .prize-item {
+    padding: $padding-base;
+    flex-basis: 25%;
+  }
+
+  .content-container > .prize-item:last-child {
+    /* CV collection */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    column-gap: $gap-base;
+  }
+
+  /* Partner and Sponsor section */
+  .content-container > .partner-item,
+  .content-container > .sponsor-item {
+    width: 30%;
+  }
+
+  .content-container > .partner-item,
+  .content-container > .sponsor-item {
+    padding: 0 $padding-base;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: $lg) {
+  /* Overview of Challenges section */
   .content-container > .challenge-overview-item {
     padding: $padding-base calc($padding-base * 8);
     flex-basis: 50%;
   }
 
+  /* Competition Timeline section */
   .content-container > .competition-timeline-item {
     padding: $padding-base calc($padding-base * 4);
     flex-basis: 33%;
   }
-
-  .content-container > .prize-item {
-    padding: $padding-base calc($padding-base * 4);
-    flex-basis: 25%;
-  }
-
-  /* Adjust CV collection item */
-  .content-container > .prize-item:last-child {
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  .content-container > .prize-item:last-child > * {
-    padding: $padding-base;
-  }
-}
-
-/* Container's divider */
-.content-container > .challenge-overview-item > hr {
-  border: $divider-thin solid $secondary-text-color;
-}
-
-.content-container > .competition-timeline-item > hr {
-  border: $divider-thin solid $primary-text-color;
-}
-
-/* Challenge Overview: challenge item's link */
-.content-container > .challenge-overview-item > a {
-  text-decoration: underline;
 }

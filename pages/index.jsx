@@ -8,9 +8,12 @@ function HomePage() {
   return (
     <PageContainer
       sectionContents={[
+        // Hero section
         <div key="hero" className={styles['content-container']}>
           <img src="/home-logo.png" alt="logo" width="70%" />
         </div>,
+
+        // Overview of Challenges section
         <div key="challenge-overview" className={styles['content-container']}>
           <h1>Overview of Challenges</h1>
           {HomePageData['challenge-overview'].map((challenge) => (
@@ -25,6 +28,8 @@ function HomePage() {
             </div>
           ))}
         </div>,
+
+        // Competition Timeline section
         <div key="competition-timeline" className={styles['content-container']}>
           <h1>Competition Timeline</h1>
           {HomePageData['competition-timeline'].map((timeline) => (
@@ -46,25 +51,57 @@ function HomePage() {
             </div>
           ))}
         </div>,
+
+        // Prizes section
         <div key="prizes" className={styles['content-container']}>
           <h1>Prizes</h1>
           {HomePageData.prizes.map((prize) => (
             <div key={prize.rank} className={styles['prize-item']}>
-              <img src="image-template.svg" alt="Prize item" width="100%" />
+              <img src="image-template.svg" alt="Prize item" />
               <h3>{prize.rank}</h3>
               <p>{prize.name}</p>
             </div>
           ))}
           <div className={styles['prize-item']}>
+            <img src="image-template.svg" alt="CV item" />
             <h3>CV Collection</h3>
-            <img src="image-template.svg" alt="CV item" width="25%" />
           </div>
         </div>,
-        <div key="partners">
+
+        // Partners and Sponsors section
+        <div key="partners and sponsors" className={styles['content-container']}>
           <h1>Partners</h1>
-        </div>,
-        <div key="sponsors">
+          <h2>
+            <i>Challenge Partners</i>
+          </h2>
+          {HomePageData.partners['Challenge Partners'].map((partner) => (
+            <img
+              key={partner.id}
+              className={styles['partner-item']}
+              src={partner.imageURL}
+              alt="Partner logo"
+            />
+          ))}
+          <h2>
+            <i>Ecosystem Partners</i>
+          </h2>
+          {HomePageData.partners['Ecosystem Partners'].map((partner) => (
+            <img
+              key={partner.id}
+              className={styles['partner-item']}
+              src={partner.imageURL}
+              alt="Partner logo"
+            />
+          ))}
           <h1>Sponsors</h1>
+          {HomePageData.sponsors.map((sponsor) => (
+            <img
+              key={sponsor.id}
+              className={styles['sponsor-item']}
+              src={sponsor.imageURL}
+              alt="Sponsor logo"
+            />
+          ))}
         </div>,
       ]}
     />
