@@ -138,7 +138,7 @@ function AnnouncementItem({ announcementData, isEditable }) {
         <p>
           {descriptionList.map((description) => (
             <span key={description.index}>
-              <span>{description.line}</span>
+              {description.line}
               <br />
             </span>
           ))}
