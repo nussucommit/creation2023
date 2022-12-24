@@ -17,11 +17,6 @@
   }
 }
 
-/* Enable snap scrolling effect on homepage */
-.snap-start {
-  scroll-snap-align: start;
-}
-
 /* Hide scrollbar within section, only for homepage */
 .scrollbar-hide::-webkit-scrollbar {
   width: 0 !important;
