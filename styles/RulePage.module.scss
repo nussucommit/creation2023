@@ -1,0 +1,71 @@
+@import './variables.scss';
+
+.title-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: calc($margin-base * 4);
+}
+
+#rule-decoration {
+  display: none;
+}
+
+.rule-item {
+  margin: $margin-base;
+  margin-bottom: calc($margin-base * 2);
+}
+
+.rule-item > h2 {
+  flex-basis: 100%;
+  margin: calc($margin-base / 4) 0;
+}
+
+.rule-item > hr {
+  border: $divider-thick solid $primary-text-color;
+}
+
+@media only screen and (min-width: $sm) {
+  .rule-item {
+    margin: $margin-base calc($margin-base * 4);
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .title-container {
+    margin-bottom: calc($margin-base * 8);
+  }
+
+  .rule-item {
+    margin: calc($margin-base * 2) calc($margin-base * 8);
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .title-container {
+    margin-bottom: calc($margin-base * 10);
+  }
+
+  #rule-decoration {
+    width: 15%;
+    display: block;
+    position: absolute;
+    top: -125px;
+    right: 10%;
+  }
+
+  .rule-item {
+    margin: calc($margin-base * 4) calc($margin-base * 16);
+  }
+
+  .rule-item > h2 {
+    flex-basis: 80%;
+  }
+
+  .rule-item > h2 {
+    margin: $margin-base 0;
+  }
+
+  .rule-item > p {
+    flex-grow: 1;
+  }
+}
