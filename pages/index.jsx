@@ -8,8 +8,8 @@ function HomePage() {
   return (
     <PageContainer
       sectionContents={[
-        <div key="hero">
-          <h1>CREATION 2023</h1>
+        <div key="hero" className={styles['content-container']}>
+          <img src="/home-logo.png" alt="logo" width="70%" />
         </div>,
         <div key="challenge-overview" className={styles['content-container']}>
           <h1>Overview of Challenges</h1>
