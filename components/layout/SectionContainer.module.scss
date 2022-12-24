@@ -10,13 +10,6 @@
   align-items: center;
 }
 
-/* To remove extra scroll bar in minimized desktop view */
-@media only screen and (min-width: $lg) {
-  .section-container {
-    overflow-y: scroll;
-  }
-}
-
 /* Hide scrollbar within section, only for homepage */
 .scrollbar-hide::-webkit-scrollbar {
   width: 0 !important;
