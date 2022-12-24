@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-container > h1 {
+  width: 100%;
+}
+
+.submission-container {
+  background-color: $box-background-color;
+  border-radius: 50px;
+  width: 50vw;
+  height: calc(50vw * 0.68);
+  margin: $margin-base;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submission-container > img {
+  width: 25%;
+}
+
+@media only screen and (min-width: $sm) {
+	.submission-container {
+	  width: 35vw;
+	  height: calc(35 * 0.68);
+	}
+  }
+
+@media only screen and (min-width: $md) {
+  .submission-container {
+    width: 30vw;
+    height: calc(30vw * 0.68);
+	margin: calc($margin-base * 2) calc($margin-base * 4);
+  }
+}
+
+@media only screen and (min-width: $lg) {
+	.submission-container {
+	  width: 22.5vw;
+	  height: calc(22.5vw * 0.68);
+	  margin: calc($margin-base * 2) calc($margin-base * 6);
+	}
+  }

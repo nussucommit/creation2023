@@ -1,7 +1,25 @@
+import Link from 'next/link';
+
 import PageContainer from '../../components/layout/PageContainer';
+import SUBMISSIONS from './submissions.json';
+import styles from '../../styles/SubmissionPage.module.scss';
 
 function SubmissionPage() {
-  return <PageContainer sectionContents={[<h1>Submission Page</h1>]} />;
+  return (
+    <PageContainer
+      sectionContents={[
+        <div className={styles['content-container']}>
+          <h1>Submission</h1>
+          {SUBMISSIONS.map((submission) => (
+            <Link class={styles['submission-container']} href={submission.link}>
+              <img src="submission-icon.svg" alt="submission icon" />
+              <h3>{submission.title}</h3>
+            </Link>
+          ))}
+        </div>,
+      ]}
+    />
+  );
 }
 
 export default SubmissionPage;
