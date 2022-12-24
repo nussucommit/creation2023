@@ -3,29 +3,29 @@ import PropTypes from 'prop-types';
 
 import PageContainer from '../../components/layout/PageContainer';
 import AnnouncementItem from '../../components/announcement/AnnouncementItem';
+import monthNames from '../../constants/monthNames';
 
 function AnnouncementPage({ isAuthorized, announcements }) {
   const hasAnnouncement = announcements.length !== 0;
-  if (hasAnnouncement) {
-    announcements.reverse();
-  }
 
   return (
     <PageContainer
       sectionContents={[
         <div>
           <h1>Announcements</h1>
-          <ul>
-            {hasAnnouncement
-              && announcements.map((announcementData) => (
-                <AnnouncementItem
-                  key={announcementData.id}
-                  announcementData={announcementData}
-                  isEditable={isAuthorized}
-                />
-              ))}
-          </ul>
-          {!hasAnnouncement && <p>No announcement at the moment...</p>}
+          {hasAnnouncement
+            && announcements.map((announcementData) => (
+              <AnnouncementItem
+                key={announcementData.id}
+                announcementData={announcementData}
+                isEditable={isAuthorized}
+              />
+            ))}
+          {!hasAnnouncement && (
+            <p style={{ textAlign: 'center' }}>
+              No announcement at the moment...
+            </p>
+          )}
         </div>,
       ]}
     />
@@ -52,21 +52,53 @@ export async function getStaticProps() {
 
   const announcementsCollection = db.collection('announcements');
 
-  const announcements = await announcementsCollection.find().toArray();
+  const announcements = await announcementsCollection
+    .find()
+    .sort({ datetime: -1 })
+    .toArray();
 
   client.close();
 
   return {
     props: {
-      announcements: announcements.map((announcement) => ({
-        // eslint-disable-next-line no-underscore-dangle
-        id: announcement._id.toString(),
-        title: announcement.title,
-        datetime: announcement.datetime,
-        description: announcement.description,
-        mediaURL: announcement.mediaURL,
-        mediaType: announcement.mediaType,
-      })),
+      announcements: announcements.map((announcement) => {
+        const description = announcement.description.replace(
+          /(?:\r\n|\r|\n)/g,
+          '<br />',
+        );
+
+        const datetime = new Date(announcement.datetime);
+        const day = datetime.getDate();
+        const month = monthNames[datetime.getMonth()];
+        let hour = datetime.getHours();
+        let meridiemIndicator = 'AM';
+
+        // Update meridiem indicator if necessary
+        if (hour >= 12) {
+          meridiemIndicator = 'PM';
+        }
+
+        // Convert to 12-hour clock format
+        if (hour > 12) {
+          hour -= 12;
+        }
+
+        if (hour === 0) {
+          hour = 12;
+        }
+
+        const datetimeString = `${day} ${month} ${hour}:${datetime.getMinutes()} ${meridiemIndicator}`;
+
+        return {
+          // eslint-disable-next-line no-underscore-dangle
+          id: announcement._id.toString(),
+          title: announcement.title,
+          datetime: datetimeString,
+          description,
+          mediaURL: announcement.mediaURL,
+          mediaType: announcement.mediaType,
+        };
+      }),
     },
     revalidate: 1,
   };

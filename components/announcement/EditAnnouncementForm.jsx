@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import storage from '../../firebase/firebase-config';
 import allowedImageTypes from '../../constants/allowedImageTypes';
 import allowedVideoTypes from '../../constants/allowedVideoTypes';
@@ -14,6 +14,7 @@ function EditAnnouncementForm({
   const titleInputRef = useRef(announcementData.title);
   const descriptionInputRef = useRef(announcementData.description);
   const [mediaFile, setMediaFile] = useState();
+  const [uploadProgress, setUploadProgress] = useState();
 
   const uploadHandler = (event) => {
     event.preventDefault();
@@ -51,15 +52,28 @@ function EditAnnouncementForm({
       const modifiedMediaName = `announcement_${Date.now()}`;
       const mediaStorageLocation = `announcements/${modifiedMediaName}`;
       const mediaStorageRef = ref(storage, mediaStorageLocation);
-      await uploadBytes(mediaStorageRef, mediaFile);
-      getDownloadURL(mediaStorageRef)
-        .then(async (mediaURL) => {
-          updatedAnnouncementData.mediaURL = mediaURL;
+      const uploadTask = uploadBytesResumable(mediaStorageRef, mediaFile);
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setUploadProgress(`${progress}%`);
+        },
+        (error) => {
+          // eslint-disable-next-line no-alert
+          alert(error.message, 'error');
+        },
+        () => {
+          getDownloadURL(mediaStorageRef)
+            .then(async (mediaURL) => {
+              updatedAnnouncementData.mediaURL = mediaURL;
 
-          await onEditAnnouncement(updatedAnnouncementData);
-        })
-        // eslint-disable-next-line no-alert
-        .catch((error) => alert(error.message, 'error'));
+              await onEditAnnouncement(updatedAnnouncementData);
+            })
+            // eslint-disable-next-line no-alert
+            .catch((error) => alert(error.message, 'error'));
+        },
+      );
     } else {
       await onEditAnnouncement(updatedAnnouncementData);
     }
@@ -106,7 +120,12 @@ function EditAnnouncementForm({
       <br />
 
       <hr />
-      <button type="submit">Update Announcement</button>
+      {uploadProgress ? (
+        <p>{uploadProgress}</p>
+      ) : (
+        <button type="submit">Update Announcement</button>
+      )}
+
       <br />
       <br />
       <button type="button" onClick={onCancelEdit}>

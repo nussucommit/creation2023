@@ -24,10 +24,9 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
     const enteredTitle = titleInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-    const currentDatetime = new Date();
-    const currentDatetimeString = `${currentDatetime.getDate()}/${
-      currentDatetime.getMonth() + 1
-    }/${currentDatetime.getFullYear()} ${currentDatetime.getHours()}:${currentDatetime.getMinutes()}:${currentDatetime.getSeconds()}`;
+
+    // Generate date time string
+    const currentDatetimeString = new Date().toISOString();
 
     const announcementData = {
       title: enteredTitle,

@@ -6,6 +6,7 @@ import { ref, deleteObject } from 'firebase/storage';
 
 import EditAnnouncementForm from './EditAnnouncementForm';
 import storage from '../../firebase/firebase-config';
+import styles from './AnnouncementItem.module.scss';
 
 function AnnouncementItem({ announcementData, isEditable }) {
   const router = useRouter();
@@ -30,15 +31,19 @@ function AnnouncementItem({ announcementData, isEditable }) {
     alert(data.message);
 
     if (data.success) {
-      const deleteRef = ref(storage, announcementData.mediaURL);
-      deleteObject(deleteRef)
-        .then(() => {
-          router.push('/announcements');
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-alert
-          alert(error.message);
-        });
+      if (hasMedia) {
+        const deleteRef = ref(storage, announcementData.mediaURL);
+        deleteObject(deleteRef)
+          .then(() => {
+            router.push('/announcements');
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-alert
+            alert(error.message);
+          });
+      } else {
+        router.push('/announcements');
+      }
     }
   };
 
@@ -69,7 +74,10 @@ function AnnouncementItem({ announcementData, isEditable }) {
     alert(data.message);
 
     if (data.success) {
-      if (announcementData.mediaURL !== updatedAnnouncementData.mediaURL) {
+      if (
+        hasMedia
+        && announcementData.mediaURL !== updatedAnnouncementData.mediaURL
+      ) {
         const deleteRef = ref(storage, announcementData.mediaURL);
         deleteObject(deleteRef)
           .then(() => {
@@ -85,6 +93,13 @@ function AnnouncementItem({ announcementData, isEditable }) {
     }
   };
 
+  const descriptionList = announcementData.description
+    .split('<br />')
+    .map((description, index) => ({
+      index,
+      line: description,
+    }));
+
   return isEditing ? (
     <EditAnnouncementForm
       announcementData={announcementData}
@@ -92,10 +107,13 @@ function AnnouncementItem({ announcementData, isEditable }) {
       onCancelEdit={() => setIsEditing(false)}
     />
   ) : (
-    <>
-      <h2>
-        <li>{announcementData.title}</li>
-      </h2>
+    <div className={styles['announcement-item']}>
+      <div className={styles.headline}>
+        <h2>{announcementData.title}</h2>
+        <h4>
+          <i>{announcementData.datetime}</i>
+        </h4>
+      </div>
       {isEditable && (
         <>
           <button type="button" onClick={() => setIsEditing(true)}>
@@ -106,25 +124,34 @@ function AnnouncementItem({ announcementData, isEditable }) {
           </button>
         </>
       )}
-      <p>{announcementData.datetime}</p>
-      {hasMedia && isImage && (
-        <img
-          src={announcementData.mediaURL}
-          alt="announcement media"
-          width="100%"
-        />
-      )}
-      {hasMedia && isVideo && (
-        // eslint-disable-next-line jsx-a11y/media-has-caption
-        <video width="100%" controls>
-          <source src={announcementData.mediaURL} type="video/mp4" />
-          <source src={announcementData.mediaURL} type="video/webm" />
-          <source src={announcementData.mediaURL} type="video/ogg" />
-          Your browser does not support HTML video.
-        </video>
-      )}
-      <p>{announcementData.description}</p>
-    </>
+      <hr />
+      <div className={styles.description}>
+        {hasMedia && isImage && (
+          <img
+            src={announcementData.mediaURL}
+            alt="announcement media"
+            width="100%"
+          />
+        )}
+        {hasMedia && isVideo && (
+          // eslint-disable-next-line jsx-a11y/media-has-caption
+          <video width="100%" controls>
+            <source src={announcementData.mediaURL} type="video/mp4" />
+            <source src={announcementData.mediaURL} type="video/webm" />
+            <source src={announcementData.mediaURL} type="video/ogg" />
+            Your browser does not support HTML video.
+          </video>
+        )}
+        <p>
+          {descriptionList.map((description) => (
+            <span key={description.index}>
+              {description.line}
+              <br />
+            </span>
+          ))}
+        </p>
+      </div>
+    </div>
   );
 }
 
