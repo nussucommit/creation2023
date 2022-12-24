@@ -39,6 +39,10 @@
   border: $divider-thin solid $primary-text-color;
 }
 
+.content-container > #competition-timeline-decoration {
+  width: 100%;
+}
+
 /* Prizes section */
 .content-container > .prize-item {
   text-align: center;
@@ -74,6 +78,11 @@
   .content-container > .sponsor-item {
     padding: 0 $padding-base;
   }
+
+  /* Competition Timeline section */
+  .content-container > #competition-timeline-decoration {
+    width: 60%;
+  }
 }
 
 /* Desktop view */
@@ -96,5 +105,9 @@
   .content-container > .competition-timeline-item {
     padding: $padding-base calc($padding-base * 4);
     flex-basis: 33%;
+  }
+
+  .content-container > #competition-timeline-decoration {
+    width: 50%;
   }
 }

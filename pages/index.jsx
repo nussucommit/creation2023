@@ -58,6 +58,11 @@ function HomePage() {
               <p>{timeline.description}</p>
             </div>
           ))}
+          <img
+            id={styles['competition-timeline-decoration']}
+            src="/decorations/plants_orange.png"
+            alt="orange plants"
+          />
         </div>,
 
         // Prizes section
