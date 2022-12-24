@@ -10,6 +10,7 @@
   row-gap: $gap-base;
 }
 
+/* All section title and subheading */
 .content-container h1,
 .content-container h2 {
   width: 100%;
@@ -46,6 +47,16 @@
 /* Prizes section */
 .content-container > .prize-item {
   text-align: center;
+}
+
+.content-container > .prize-item > img {
+  width: 100%;
+}
+
+/* Partner and Sponsor section */
+.content-container > .partner-item,
+.content-container > .sponsor-item {
+  width: 100%;
 }
 
 /* Small screen view */
