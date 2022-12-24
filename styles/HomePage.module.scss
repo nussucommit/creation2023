@@ -1,0 +1,124 @@
+@import './variables.scss';
+
+.content-container {
+  flex: 1; /* Fill up the space vertically */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: $gap-base;
+}
+
+/* All section title and subheading */
+.content-container h1,
+.content-container h2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Overview of Challenges section */
+.content-container > .title-container {
+  width: 100%;
+  position: relative;
+}
+
+.content-container #challenge-overview-decoration {
+  display: none;
+}
+
+.content-container > .challenge-overview-item > hr {
+  border: $divider-thin solid $secondary-text-color;
+}
+
+.content-container > .challenge-overview-item > a {
+  text-decoration: underline;
+}
+
+/* Competition Timeline section */
+.content-container > .competition-timeline-item > hr {
+  border: $divider-thin solid $primary-text-color;
+}
+
+.content-container > #competition-timeline-decoration {
+  width: 100%;
+}
+
+/* Prizes section */
+.content-container > .prize-item {
+  text-align: center;
+}
+
+.content-container > .prize-item > img {
+  width: 100%;
+}
+
+/* Partner and Sponsor section */
+.content-container > .partner-item,
+.content-container > .sponsor-item {
+  width: 100%;
+}
+
+/* Small screen view */
+@media only screen and (min-width: $sm) {
+  /* Prizes section */
+  .content-container > .prize-item > img {
+    width: 100%;
+  }
+
+  .content-container > .prize-item {
+    padding: $padding-base;
+    flex-basis: 25%;
+  }
+
+  .content-container > .prize-item:last-child {
+    /* CV collection */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    column-gap: $gap-base;
+  }
+
+  /* Partner and Sponsor section */
+  .content-container > .partner-item,
+  .content-container > .sponsor-item {
+    width: 30%;
+  }
+
+  .content-container > .partner-item,
+  .content-container > .sponsor-item {
+    padding: 0 $padding-base;
+  }
+
+  /* Competition Timeline section */
+  .content-container > #competition-timeline-decoration {
+    width: 60%;
+  }
+}
+
+/* Desktop view */
+@media only screen and (min-width: $lg) {
+  /* Overview of Challenges section */
+  .content-container #challenge-overview-decoration {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-100px, 100px);
+  }
+
+  .content-container > .challenge-overview-item {
+    padding: $padding-base calc($padding-base * 8);
+    flex-basis: 50%;
+  }
+
+  /* Competition Timeline section */
+  .content-container > .competition-timeline-item {
+    padding: $padding-base calc($padding-base * 4);
+    flex-basis: 33%;
+  }
+
+  .content-container > #competition-timeline-decoration {
+    width: 50%;
+  }
+}

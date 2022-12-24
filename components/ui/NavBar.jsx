@@ -30,9 +30,12 @@ function TopNav() {
         if (link.path === '/challenges') {
           return (
             <div key={link.path} className={styles.dropdown}>
-              <p className={isCurrentPage ? styles['link-current'] : ''}>
+              <Link
+                className={isCurrentPage ? styles['link-current'] : ''}
+                href={link.path}
+              >
                 {link.title}
-              </p>
+              </Link>
 
               <div className={styles['dropdown-content']}>
                 {/* List links for all challenges */}
@@ -87,10 +90,7 @@ function SideNav() {
 
         {NAVBAR_LINKS.map((link) => (
           <Fragment key={link.path}>
-            <Link
-              href={link.path === '/challenges' ? '#' : link.path}
-              onClick={link.path === '/challenges' ? null : toggleSidenav}
-            >
+            <Link href={link.path} onClick={toggleSidenav}>
               {link.title}
             </Link>
 

@@ -24,6 +24,7 @@ h1 {
   /* All page title */
   font-family: 'Kavoon', cursive;
   font-size: $text-lg;
+  text-align: center;
 }
 
 h2 {
@@ -34,7 +35,6 @@ h2 {
 h3 {
   /* Emphasized title such as prize name and timeline date */
   font-size: $text-sm;
-  font-weight: bolder;
 }
 
 h4,
@@ -43,7 +43,7 @@ h6,
 p,
 a {
   /* Everything else */
-  font-size: $text-sm;
+  font-size: $text-xs;
 }
 
 @media only screen and (min-width: $md) {
@@ -51,6 +51,7 @@ a {
   h1 {
     /* All page title */
     font-size: $text-xl;
+    line-height: 0.1;
   }
 
   h2 {
@@ -62,4 +63,12 @@ a {
     /* Emphasized title such as prize name and timeline date */
     font-size: $text-md;
   }
+
+  h4 {
+    font-size: $text-sm;
+  }
+}
+
+hr {
+  border-width: $divider-thick;
 }
