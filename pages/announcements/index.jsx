@@ -23,7 +23,11 @@ function AnnouncementPage({ isAuthorized, announcements }) {
                 isEditable={isAuthorized}
               />
             ))}
-          {!hasAnnouncement && <p>No announcement at the moment...</p>}
+          {!hasAnnouncement && (
+            <p style={{ textAlign: 'center' }}>
+              No announcement at the moment...
+            </p>
+          )}
         </div>,
       ]}
     />
