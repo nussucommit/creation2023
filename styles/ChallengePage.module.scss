@@ -1,5 +1,14 @@
 @import './variables.scss';
 
+.title-container {
+  width: 100%;
+  position: relative;
+}
+
+#challenge-decoration {
+  display: none;
+}
+
 .challenge-item {
   margin: $margin-base;
   margin-bottom: calc($margin-base * 2);
@@ -27,6 +36,13 @@
 }
 
 @media only screen and (min-width: $lg) {
+  #challenge-decoration {
+    display: block;
+    position: absolute;
+    top: -40%;
+    right: 20%;
+  }
+
   .challenge-item {
     margin: calc($margin-base * 8) calc($margin-base * 16);
   }

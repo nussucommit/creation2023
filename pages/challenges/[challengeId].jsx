@@ -15,7 +15,14 @@ function ChallengeDetailPage() {
       <PageContainer
         sectionContents={[
           <>
-            <h1>Challenges</h1>
+            <div className={styles['title-container']}>
+              <h1>Challenges</h1>
+              <img
+                id={styles['challenge-decoration']}
+                src="/decorations/paperplane_orange.png"
+                alt="orange paper plane"
+              />
+            </div>
             <div className={styles['challenge-item']}>
               <h2>{challengeData.title}</h2>
               <hr />
