@@ -15,16 +15,14 @@ function AnnouncementPage({ isAuthorized, announcements }) {
       sectionContents={[
         <div>
           <h1>Announcements</h1>
-          <ul>
-            {hasAnnouncement
-              && announcements.map((announcementData) => (
-                <AnnouncementItem
-                  key={announcementData.id}
-                  announcementData={announcementData}
-                  isEditable={isAuthorized}
-                />
-              ))}
-          </ul>
+          {hasAnnouncement
+            && announcements.map((announcementData) => (
+              <AnnouncementItem
+                key={announcementData.id}
+                announcementData={announcementData}
+                isEditable={isAuthorized}
+              />
+            ))}
           {!hasAnnouncement && <p>No announcement at the moment...</p>}
         </div>,
       ]}
@@ -58,15 +56,22 @@ export async function getStaticProps() {
 
   return {
     props: {
-      announcements: announcements.map((announcement) => ({
-        // eslint-disable-next-line no-underscore-dangle
-        id: announcement._id.toString(),
-        title: announcement.title,
-        datetime: announcement.datetime,
-        description: announcement.description,
-        mediaURL: announcement.mediaURL,
-        mediaType: announcement.mediaType,
-      })),
+      announcements: announcements.map((announcement) => {
+        const description = announcement.description.replace(
+          /(?:\r\n|\r|\n)/g,
+          '<br />',
+        );
+
+        return {
+          // eslint-disable-next-line no-underscore-dangle
+          id: announcement._id.toString(),
+          title: announcement.title,
+          datetime: announcement.datetime,
+          description,
+          mediaURL: announcement.mediaURL,
+          mediaType: announcement.mediaType,
+        };
+      }),
     },
     revalidate: 1,
   };

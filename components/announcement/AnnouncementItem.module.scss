@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+.announcement-item {
+  margin: $margin-base;
+  margin-bottom: calc($margin-base * 2);
+}
+
+.announcement-item > .headline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: $gap-base;
+}
+
+.announcement-item > .headline > h2 {
+  flex-basis: 100%;
+}
+
+.announcement-item > .headline > h4 {
+  text-align: end;
+}
+
+.announcement-item > .headline > h2,
+.announcement-item > .headline > h4 {
+  margin: calc($margin-base / 4) 0;
+}
+
+.announcement-item > hr {
+  border: $divider-thick solid $primary-text-color;
+}
+
+@media only screen and (min-width: $sm) {
+  .announcement-item {
+    margin: $margin-base calc($margin-base * 4);
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .announcement-item {
+    margin: calc($margin-base * 2) calc($margin-base * 8);
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .announcement-item {
+    margin: calc($margin-base * 8) calc($margin-base * 16);
+  }
+
+  .announcement-item > .headline {
+    flex-wrap: nowrap;
+  }
+
+  .announcement-item > .headline > h2 {
+    flex-basis: 80%;
+  }
+
+  .announcement-item > .headline > h2,
+  .announcement-item > .headline > h4 {
+    margin: $margin-base 0;
+  }
+
+  .announcement-item > .description {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    column-gap: calc($gap-base * 4);
+  }
+
+  .announcement-item > .description > img,
+  .announcement-item > .description > video {
+    width: 25%;
+  }
+
+  .announcement-item > .description > p {
+    flex-grow: 1;
+  }
+}
