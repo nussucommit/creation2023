@@ -26,6 +26,23 @@
     padding: $padding-base calc($padding-base * 4);
     flex-basis: 33%;
   }
+
+  .content-container > .prize-item {
+    padding: $padding-base calc($padding-base * 4);
+    flex-basis: 25%;
+  }
+
+  /* Adjust CV collection item */
+  .content-container > .prize-item:last-child {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .content-container > .prize-item:last-child > * {
+    padding: $padding-base;
+  }
 }
 
 /* Container's divider */

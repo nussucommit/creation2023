@@ -44,8 +44,19 @@ function HomePage() {
             </div>
           ))}
         </div>,
-        <div key="prizes">
+        <div key="prizes" className={styles['content-container']}>
           <h1>Prizes</h1>
+          {HomePageData.prizes.map((prize) => (
+            <div key={prize.rank} className={styles['prize-item']}>
+              <img src="image-template.svg" alt="Prize item" width="100%" />
+              <h3>{prize.rank}</h3>
+              <p>{prize.name}</p>
+            </div>
+          ))}
+          <div className={styles['prize-item']}>
+            <h3>CV Collection</h3>
+            <img src="image-template.svg" alt="CV item" width="25%" />
+          </div>
         </div>,
         <div key="partners">
           <h1>Partners</h1>
