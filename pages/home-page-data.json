@@ -76,8 +76,19 @@
     }
   ],
   "partners": {
-    "Challenge Partners": [],
-    "Ecosystem Partners": []
+    "Challenge Partners": [
+      { "id": 1, "imageURL": "image-template.svg" },
+      { "id": 2, "imageURL": "image-template.svg" }
+    ],
+    "Ecosystem Partners": [
+      { "id": 1, "imageURL": "image-template.svg" },
+      { "id": 2, "imageURL": "image-template.svg" }
+    ]
   },
-  "sponsors": []
+  "sponsors": [
+    { "id": 1, "imageURL": "image-template.svg" },
+    { "id": 2, "imageURL": "image-template.svg" },
+    { "id": 3, "imageURL": "image-template.svg" },
+    { "id": 4, "imageURL": "image-template.svg" }
+  ]
 }
