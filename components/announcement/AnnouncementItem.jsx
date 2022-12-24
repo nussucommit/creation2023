@@ -31,15 +31,19 @@ function AnnouncementItem({ announcementData, isEditable }) {
     alert(data.message);
 
     if (data.success) {
-      const deleteRef = ref(storage, announcementData.mediaURL);
-      deleteObject(deleteRef)
-        .then(() => {
-          router.push('/announcements');
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-alert
-          alert(error.message);
-        });
+      if (hasMedia) {
+        const deleteRef = ref(storage, announcementData.mediaURL);
+        deleteObject(deleteRef)
+          .then(() => {
+            router.push('/announcements');
+          })
+          .catch((error) => {
+            // eslint-disable-next-line no-alert
+            alert(error.message);
+          });
+      } else {
+        router.push('/announcements');
+      }
     }
   };
 
@@ -70,7 +74,10 @@ function AnnouncementItem({ announcementData, isEditable }) {
     alert(data.message);
 
     if (data.success) {
-      if (announcementData.mediaURL !== updatedAnnouncementData.mediaURL) {
+      if (
+        hasMedia
+        && announcementData.mediaURL !== updatedAnnouncementData.mediaURL
+      ) {
         const deleteRef = ref(storage, announcementData.mediaURL);
         deleteObject(deleteRef)
           .then(() => {
