@@ -5,6 +5,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import storage from '../../firebase/firebase-config';
 import allowedImageTypes from '../../constants/allowedImageTypes';
 import allowedVideoTypes from '../../constants/allowedVideoTypes';
+import monthNames from '../../constants/monthNames';
 
 function NewAnnouncementForm({ onAddAnnouncement }) {
   const titleInputRef = useRef();
@@ -24,10 +25,29 @@ function NewAnnouncementForm({ onAddAnnouncement }) {
     const enteredTitle = titleInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
+
+    // Generate date time string
     const currentDatetime = new Date();
-    const currentDatetimeString = `${currentDatetime.getDate()}/${
-      currentDatetime.getMonth() + 1
-    }/${currentDatetime.getFullYear()} ${currentDatetime.getHours()}:${currentDatetime.getMinutes()}:${currentDatetime.getSeconds()}`;
+    const currentDay = currentDatetime.getDate();
+    const currentMonth = monthNames[currentDatetime.getMonth()];
+    let currentHour = currentDatetime.getHours();
+    let meridiemIndicator = 'AM';
+
+    // Update meridiem indicator if necessary
+    if (currentHour >= 12) {
+      meridiemIndicator = 'PM';
+    }
+
+    // Convert to 12-hour clock format
+    if (currentHour > 12) {
+      currentHour -= 12;
+    }
+
+    if (currentHour === 0) {
+      currentHour = 12;
+    }
+
+    const currentDatetimeString = `${currentDay} ${currentMonth} ${currentHour}:${currentDatetime.getMinutes()} ${meridiemIndicator}`;
 
     const announcementData = {
       title: enteredTitle,
