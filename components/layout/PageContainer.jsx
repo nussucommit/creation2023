@@ -4,8 +4,14 @@ import SectionContainer from './SectionContainer';
 import styles from './PageContainer.module.scss';
 
 function PageContainer({ sectionContents }) {
+  const isHomePage = sectionContents.length > 1;
+
   return (
-    <div className={styles['page-container']}>
+    <div
+      className={`${styles['page-container']} ${
+        isHomePage ? styles['overflow-scroll'] : ''
+      }`}
+    >
       {sectionContents.map((sectionContent, index) => (
         <SectionContainer
           key={sectionContent.key}

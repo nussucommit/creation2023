@@ -11,7 +11,12 @@
   /* Enable snap scrolling effect on homepage */
   .page-container {
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: hidden;
     scroll-snap-type: y mandatory;
+  }
+
+  /* Enable scrolling of page container for home page only */
+  .overflow-scroll {
+    overflow-y: scroll;
   }
 }

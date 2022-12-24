@@ -16,6 +16,16 @@
   scroll-snap-align: start;
 }
 
+/* Hide scrollbar within section, only for homepage */
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.scrollbar-hide {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
 .primary-section {
   background-color: $primary-section-color;
   color: $primary-text-color;

@@ -22,9 +22,10 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
     };
   }, [setWindowWidth]);
 
-  // Set section container height and scrolling effect depending on whether it has one section only
-  const snapStartClass = sectionCount > 1 && windowWidth > BREAKPOINTS.lg
-    ? styles['snap-start']
+  // If it is a homepage (more than 1 section) and large screen,
+  // enable scroll snap align start and hide section container scroll bar
+  const scrollClass = sectionCount > 1 && windowWidth > BREAKPOINTS.lg
+    ? `${styles['snap-start']} ${styles['scrollbar-hide']}`
     : '';
 
   // Alternate the background color and text color of the section, except for last section
@@ -34,7 +35,7 @@ function SectionContainer({ sectionCount, sectionIndex, content }) {
 
   return (
     <section
-      className={`${styles['section-container']} ${snapStartClass} ${sectionClass}`}
+      className={`${styles['section-container']} ${scrollClass} ${sectionClass}`}
     >
       {sectionIndex === 0 && <NavBar />}
       {content}
