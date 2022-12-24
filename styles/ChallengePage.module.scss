@@ -1,0 +1,45 @@
+@import './variables.scss';
+
+.challenge-item {
+  margin: $margin-base;
+  margin-bottom: calc($margin-base * 2);
+}
+
+.challenge-item > h2 {
+  flex-basis: 100%;
+  margin: calc($margin-base / 4) 0;
+}
+
+.challenge-item > hr {
+  border: $divider-thick solid $primary-text-color;
+}
+
+@media only screen and (min-width: $sm) {
+  .challenge-item {
+    margin: $margin-base calc($margin-base * 4);
+  }
+}
+
+@media only screen and (min-width: $md) {
+  .challenge-item {
+    margin: calc($margin-base * 2) calc($margin-base * 8);
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  .challenge-item {
+    margin: calc($margin-base * 8) calc($margin-base * 16);
+  }
+
+  .challenge-item > h2 {
+    flex-basis: 80%;
+  }
+
+  .challenge-item > h2 {
+    margin: $margin-base 0;
+  }
+
+  .challenge-item > p {
+    flex-grow: 1;
+  }
+}
