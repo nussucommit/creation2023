@@ -114,18 +114,18 @@ function AnnouncementItem({ announcementData, isEditable }) {
           <i>{announcementData.datetime}</i>
         </h4>
       </div>
+      {isEditable && (
+        <>
+          <button type="button" onClick={() => setIsEditing(true)}>
+            Edit
+          </button>
+          <button type="button" onClick={deleteAnnouncementPrompt}>
+            Delete
+          </button>
+        </>
+      )}
       <hr />
       <div className={styles.description}>
-        {isEditable && (
-          <>
-            <button type="button" onClick={() => setIsEditing(true)}>
-              Edit
-            </button>
-            <button type="button" onClick={deleteAnnouncementPrompt}>
-              Delete
-            </button>
-          </>
-        )}
         {hasMedia && isImage && (
           <img
             src={announcementData.mediaURL}
