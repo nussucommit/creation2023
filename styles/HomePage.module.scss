@@ -1,7 +1,7 @@
 @import './variables.scss';
 
-/* Challenge Overview: container */
-.challenge-overview {
+/* Content containers */
+.content-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -10,29 +10,34 @@
   row-gap: normal;
 }
 
-/* Challenge Overview: title */
-.challenge-overview > h1 {
+/* Content title */
+.content-container > h1 {
   width: 100%;
 }
 
-/* Challenge Overview: challenge container */
-.challenge-overview > div {
-  padding: $padding-base;
-}
-
-@media only screen and (min-width: 600px) {
-  .challenge-overview > div {
+@media only screen and (min-width: $sm) {
+  /* Use direct child selecter to increase specificity */
+  .content-container > .challenge-overview-item {
     padding: $padding-base calc($padding-base * 8);
     flex-basis: 50%;
   }
+
+  .content-container > .competition-timeline-item {
+    padding: $padding-base calc($padding-base * 4);
+    flex-basis: 33%;
+  }
 }
 
-/* Challenge Overview: challenge container's divider */
-.challenge-overview > div > hr {
+/* Container's divider */
+.content-container > .challenge-overview-item > hr {
   border: $divider-thin solid $secondary-text-color;
 }
 
-/* Challenge Overview: challenge container's link */
-.challenge-overview > div > a {
+.content-container > .competition-timeline-item > hr {
+  border: $divider-thin solid $primary-text-color;
+}
+
+/* Challenge Overview: challenge item's link */
+.content-container > .challenge-overview-item > a {
   text-decoration: underline;
 }

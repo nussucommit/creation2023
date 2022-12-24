@@ -21,7 +21,38 @@
       "link": "/challenges/4"
     }
   ],
-  "competition-timeline": [],
+  "competition-timeline": [
+    {
+      "date": "17 JAN",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "date": "29 JAN",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "date": "5 FEB",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "date": "6 MAR",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "date": "9 MAR",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    },
+    {
+      "date": "12 MAR",
+      "title": "Lorem Ipsum",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+    }
+  ],
   "prizes": [],
   "partners": {
     "Challenge Partners": [],

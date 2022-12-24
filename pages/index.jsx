@@ -9,10 +9,13 @@ function HomePage() {
         <div key="hero">
           <h1>CREATION 2023</h1>
         </div>,
-        <div key="challenge-overview" className={styles['challenge-overview']}>
+        <div key="challenge-overview" className={styles['content-container']}>
           <h1>Overview of Challenges</h1>
           {HomePageData['challenge-overview'].map((challenge) => (
-            <div key={challenge.title}>
+            <div
+              key={challenge.title}
+              className={styles['challenge-overview-item']}
+            >
               <h3>{challenge.title}</h3>
               <hr />
               <p>{challenge.description}</p>
@@ -20,8 +23,26 @@ function HomePage() {
             </div>
           ))}
         </div>,
-        <div key="competition-timeline">
+        <div key="competition-timeline" className={styles['content-container']}>
           <h1>Competition Timeline</h1>
+          {HomePageData['competition-timeline'].map((timeline) => (
+            <div
+              key={timeline.date}
+              className={styles['competition-timeline-item']}
+            >
+              <h3>
+                {/* Date is emphasized text, slightly larger than $text-md size */}
+                <strong style={{ fontSize: '35px' }}>
+                  {timeline.date}
+                  :
+                </strong>
+                {' '}
+                <span>{timeline.title}</span>
+              </h3>
+              <hr />
+              <p>{timeline.description}</p>
+            </div>
+          ))}
         </div>,
         <div key="prizes">
           <h1>Prizes</h1>
