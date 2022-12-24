@@ -10,6 +10,11 @@
   row-gap: normal;
 }
 
+/* Challenge Overview: title */
+.challenge-overview > h1 {
+  width: 100%;
+}
+
 /* Challenge Overview: challenge container */
 .challenge-overview > div {
   padding: $padding-base;
