@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import PageContainer from '../components/layout/PageContainer';
 import HomePageData from './home-page-data.json';
 import styles from '../styles/HomePage.module.scss';
@@ -19,7 +21,7 @@ function HomePage() {
               <h3>{challenge.title}</h3>
               <hr />
               <p>{challenge.description}</p>
-              <a href={challenge.link}>Learn more...</a>
+              <Link href={challenge.link}>Learn more...</Link>
             </div>
           ))}
         </div>,
