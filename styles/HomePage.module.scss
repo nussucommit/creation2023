@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+/* Challenge Overview: container */
+.challenge-overview {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  row-gap: normal;
+}
+
+/* Challenge Overview: challenge container */
+.challenge-overview > div {
+  padding: $padding-base;
+}
+
+@media only screen and (min-width: 600px) {
+  .challenge-overview > div {
+    padding: $padding-base calc($padding-base * 8);
+    flex-basis: 50%;
+  }
+}
+
+/* Challenge Overview: challenge container's divider */
+.challenge-overview > div > hr {
+  border: $divider-thin solid $secondary-text-color;
+}
+
+/* Challenge Overview: challenge container's link */
+.challenge-overview > div > a {
+  text-decoration: underline;
+}
