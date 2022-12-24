@@ -17,6 +17,15 @@
 }
 
 /* Overview of Challenges section */
+.content-container > .title-container {
+  width: 100%;
+  position: relative;
+}
+
+.content-container #challenge-overview-decoration {
+  display: none;
+}
+
 .content-container > .challenge-overview-item > hr {
   border: $divider-thin solid $secondary-text-color;
 }
@@ -70,6 +79,14 @@
 /* Desktop view */
 @media only screen and (min-width: $lg) {
   /* Overview of Challenges section */
+  .content-container #challenge-overview-decoration {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-100px, 100px);
+  }
+
   .content-container > .challenge-overview-item {
     padding: $padding-base calc($padding-base * 8);
     flex-basis: 50%;

@@ -15,7 +15,15 @@ function HomePage() {
 
         // Overview of Challenges section
         <div key="challenge-overview" className={styles['content-container']}>
-          <h1>Overview of Challenges</h1>
+          <div className={styles['title-container']}>
+            <h1>Overview of Challenges</h1>
+            <img
+              id={styles['challenge-overview-decoration']}
+              src="/decorations/paperplane_white.png"
+              alt="white paper plane"
+            />
+          </div>
+
           {HomePageData['challenge-overview'].map((challenge) => (
             <div
               key={challenge.title}
@@ -69,7 +77,10 @@ function HomePage() {
         </div>,
 
         // Partners and Sponsors section
-        <div key="partners and sponsors" className={styles['content-container']}>
+        <div
+          key="partners and sponsors"
+          className={styles['content-container']}
+        >
           <h1>Partners</h1>
           <h2>
             <i>Challenge Partners</i>
