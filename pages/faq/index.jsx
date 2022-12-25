@@ -1,3 +1,8 @@
+import Image from 'next/image';
+
+import { kavoon } from '../../helper/font-loader';
+import FAQDecoration from '../../public/decorations/flower_orange.png';
+import QuestionDecoration from '../../public/decorations/question.png';
 import faqs from './faq.json';
 import PageContainer from '../../components/layout/PageContainer';
 import styles from '../../styles/FAQPage.module.scss';
@@ -8,17 +13,17 @@ function FAQPage() {
       sectionContents={[
         <div>
           <div className={styles['title-container']}>
-            <img
+            <Image
               id={styles['faq-decoration']}
-              src="/decorations/flower_orange.png"
+              src={FAQDecoration}
               alt="orange flower"
             />
-            <h1>Frequently Asked Questions</h1>
+            <h1 className={kavoon.className}>Frequently Asked Questions</h1>
           </div>
           {faqs.map((faq) => (
             <div key={faq.question} className={styles['faq-item']}>
               <div className={styles['faq-question']}>
-                <img src="/decorations/question.png" alt="qustion" />
+                <Image src={QuestionDecoration} alt="qustion" />
                 <div>
                   <h2>{faq.question}</h2>
                   {faq.answers.map((answer) => (

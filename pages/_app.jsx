@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 
+import inter from '../helper/font-loader';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <main className={inter.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
 
 MyApp.propTypes = {

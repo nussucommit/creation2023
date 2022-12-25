@@ -1,7 +1,13 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
+import { kavoon } from '../helper/font-loader';
 import PageContainer from '../components/layout/PageContainer';
 import HomePageData from './home-page-data.json';
+import HeroImage from '../public/home-logo.png';
+import ChallengeDecoration from '../public/decorations/paperplane_white.png';
+import TimelineDecoration from '../public/decorations/plants_orange.png';
+import ImageTemplate from '../public/image-template.svg';
 import styles from '../styles/HomePage.module.scss';
 
 function HomePage() {
@@ -10,16 +16,16 @@ function HomePage() {
       sectionContents={[
         // Hero section
         <div key="hero" className={styles['content-container']}>
-          <img src="/home-logo.png" alt="logo" width="70%" />
+          <Image id={styles['hero-image']} src={HeroImage} alt="hero image" />
         </div>,
 
         // Overview of Challenges section
         <div key="challenge-overview" className={styles['content-container']}>
           <div className={styles['title-container']}>
-            <h1>Overview of Challenges</h1>
-            <img
+            <h1 className={kavoon.className}>Overview of Challenges</h1>
+            <Image
               id={styles['challenge-overview-decoration']}
-              src="/decorations/paperplane_white.png"
+              src={ChallengeDecoration}
               alt="white paper plane"
             />
           </div>
@@ -39,7 +45,7 @@ function HomePage() {
 
         // Competition Timeline section
         <div key="competition-timeline" className={styles['content-container']}>
-          <h1>Competition Timeline</h1>
+          <h1 className={kavoon.className}>Competition Timeline</h1>
           {HomePageData['competition-timeline'].map((timeline) => (
             <div
               key={timeline.date}
@@ -58,25 +64,25 @@ function HomePage() {
               <p>{timeline.description}</p>
             </div>
           ))}
-          <img
+          <Image
             id={styles['competition-timeline-decoration']}
-            src="/decorations/plants_orange.png"
+            src={TimelineDecoration}
             alt="orange plants"
           />
         </div>,
 
         // Prizes section
         <div key="prizes" className={styles['content-container']}>
-          <h1>Prizes</h1>
+          <h1 className={kavoon.className}>Prizes</h1>
           {HomePageData.prizes.map((prize) => (
             <div key={prize.rank} className={styles['prize-item']}>
-              <img src="image-template.svg" alt="Prize item" />
+              <Image src={ImageTemplate} alt="Prize item" />
               <h3>{prize.rank}</h3>
               <p>{prize.name}</p>
             </div>
           ))}
           <div className={styles['prize-item']}>
-            <img src="image-template.svg" alt="CV item" />
+            <Image src={ImageTemplate} alt="CV item" />
             <h3>CV Collection</h3>
           </div>
         </div>,
@@ -86,15 +92,15 @@ function HomePage() {
           key="partners and sponsors"
           className={styles['content-container']}
         >
-          <h1>Partners</h1>
+          <h1 className={kavoon.className}>Partners</h1>
           <h2>
             <i>Challenge Partners</i>
           </h2>
           {HomePageData.partners['Challenge Partners'].map((partner) => (
-            <img
+            <Image
               key={partner.id}
               className={styles['partner-item']}
-              src={partner.imageURL}
+              src={ImageTemplate}
               alt="Partner logo"
             />
           ))}
@@ -102,19 +108,19 @@ function HomePage() {
             <i>Ecosystem Partners</i>
           </h2>
           {HomePageData.partners['Ecosystem Partners'].map((partner) => (
-            <img
+            <Image
               key={partner.id}
               className={styles['partner-item']}
-              src={partner.imageURL}
+              src={ImageTemplate}
               alt="Partner logo"
             />
           ))}
-          <h1>Sponsors</h1>
+          <h1 className={kavoon.className}>Sponsors</h1>
           {HomePageData.sponsors.map((sponsor) => (
-            <img
+            <Image
               key={sponsor.id}
               className={styles['sponsor-item']}
-              src={sponsor.imageURL}
+              src={ImageTemplate}
               alt="Sponsor logo"
             />
           ))}

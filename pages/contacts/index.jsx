@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+import { kavoon } from '../../helper/font-loader';
+import ContactDecoration from '../../public/decorations/friends_orange.png';
 import PageContainer from '../../components/layout/PageContainer';
 import styles from '../../styles/ContactPage.module.scss';
 
@@ -6,7 +10,7 @@ function ContactPage() {
     <PageContainer
       sectionContents={[
         <div className={styles['contact-item']}>
-          <h1>Contact Us</h1>
+          <h1 className={kavoon.className}>Contact Us</h1>
           <p>
             Please submit your inquiry to
             {' '}
@@ -21,9 +25,9 @@ function ContactPage() {
             <br />
             Thank you :)
           </p>
-          <img
+          <Image
             id={styles['contact-decoration']}
-            src="/decorations/friends_orange.png"
+            src={ContactDecoration}
             alt="orange friends"
           />
         </div>,

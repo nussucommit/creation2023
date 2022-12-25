@@ -17,6 +17,12 @@
   text-align: center;
 }
 
+/* Hero section */
+.content-container > #hero-image {
+  width: 70%;
+  height: auto;
+}
+
 /* Overview of Challenges section */
 .content-container > .title-container {
   width: 100%;
@@ -42,6 +48,7 @@
 
 .content-container > #competition-timeline-decoration {
   width: 100%;
+  height: auto;
 }
 
 /* Prizes section */
@@ -93,6 +100,7 @@
   /* Competition Timeline section */
   .content-container > #competition-timeline-decoration {
     width: 60%;
+    height: auto;
   }
 }
 
@@ -120,5 +128,6 @@
 
   .content-container > #competition-timeline-decoration {
     width: 50%;
+    height: auto;
   }
 }

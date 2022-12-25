@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+import { kavoon } from '../../helper/font-loader';
+import RuleDecoration from '../../public/decorations/butterfly_orange.png';
 import rules from './rules.json';
 import PageContainer from '../../components/layout/PageContainer';
 import styles from '../../styles/RulePage.module.scss';
@@ -8,10 +12,10 @@ function RulePage() {
       sectionContents={[
         <div>
           <div className={styles['title-container']}>
-            <h1>Rules and Regulations</h1>
-            <img
+            <h1 className={kavoon.className}>Rules and Regulations</h1>
+            <Image
               id={styles['rule-decoration']}
-              src="/decorations/butterfly_orange.png"
+              src={RuleDecoration}
               alt="orange butterfly"
             />
           </div>

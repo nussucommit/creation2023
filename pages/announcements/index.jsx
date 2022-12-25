@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 import PropTypes from 'prop-types';
 
+import { kavoon } from '../../helper/font-loader';
 import PageContainer from '../../components/layout/PageContainer';
 import AnnouncementItem from '../../components/announcement/AnnouncementItem';
 import monthNames from '../../constants/monthNames';
@@ -12,7 +13,7 @@ function AnnouncementPage({ isAuthorized, announcements }) {
     <PageContainer
       sectionContents={[
         <div>
-          <h1>Announcements</h1>
+          <h1 className={kavoon.className}>Announcements</h1>
           {hasAnnouncement
             && announcements.map((announcementData) => (
               <AnnouncementItem
