@@ -65,10 +65,6 @@
   font-size: $text-sm;
 }
 
-.topnav > :first-child {
-  font-family: 'Kavoon', cursive;
-}
-
 /* Hide topnav links on mobile view */
 .topnav > *:not(:first-child) {
   display: none;
