@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRef, useState } from 'react';
 
 import { MongoClient } from 'mongodb';
@@ -36,25 +37,32 @@ function AnnouncementManagementPage({ announcements }) {
   return authorized ? (
     <AnnouncementPage isAuthorized={authorized} announcements={announcements} />
   ) : (
-    <PageContainer
-      sectionContents={[
-        <form onSubmit={authorizeHandler}>
-          <label htmlFor="admin-password">
-            Admin Password:
+    <>
+      <Head>
+        <title>Manage Announcement - CREATION 2023 | NUSSU commIT</title>
+        <meta name="google" content="nositelinkssearchbox" key="nositelinks" />
+        <meta name="google" content="notranslate" key="notranslate" />
+      </Head>
+      <PageContainer
+        sectionContents={[
+          <form onSubmit={authorizeHandler}>
+            <label htmlFor="admin-password">
+              Admin Password:
+              <br />
+              <input
+                id="admin-password"
+                type="password"
+                ref={passwordInputRef}
+                required
+              />
+            </label>
             <br />
-            <input
-              id="admin-password"
-              type="password"
-              ref={passwordInputRef}
-              required
-            />
-          </label>
-          <br />
-          <br />
-          <button type="submit">Manage announcement</button>
-        </form>,
-      ]}
-    />
+            <br />
+            <button type="submit">Manage announcement</button>
+          </form>,
+        ]}
+      />
+    </>
   );
 }
 
@@ -73,7 +81,10 @@ export async function getStaticProps() {
 
   const announcementsCollection = db.collection('announcements');
 
-  const announcements = await announcementsCollection.find().sort({ datetime: -1 }).toArray();
+  const announcements = await announcementsCollection
+    .find()
+    .sort({ datetime: -1 })
+    .toArray();
 
   client.close();
 
