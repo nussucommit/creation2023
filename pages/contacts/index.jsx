@@ -1,4 +1,7 @@
+import Image from 'next/image';
+
 import { kavoon } from '../../helper/font-loader';
+import ContactDecoration from '../../public/decorations/friends_orange.png';
 import PageContainer from '../../components/layout/PageContainer';
 import styles from '../../styles/ContactPage.module.scss';
 
@@ -22,9 +25,9 @@ function ContactPage() {
             <br />
             Thank you :)
           </p>
-          <img
+          <Image
             id={styles['contact-decoration']}
-            src="/decorations/friends_orange.png"
+            src={ContactDecoration}
             alt="orange friends"
           />
         </div>,

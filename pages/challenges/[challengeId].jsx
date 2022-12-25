@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import { kavoon } from '../../helper/font-loader';
 import PageContainer from '../../components/layout/PageContainer';
+import ChallengeDecoration from '../../public/decorations/paperplane_orange.png';
 import CHALLENGES from './challenges.json';
 import styles from '../../styles/ChallengePage.module.scss';
 
@@ -19,9 +21,9 @@ function ChallengeDetailPage() {
           <>
             <div className={styles['title-container']}>
               <h1 className={kavoon.className}>Challenges</h1>
-              <img
+              <Image
                 id={styles['challenge-decoration']}
-                src="/decorations/paperplane_orange.png"
+                src={ChallengeDecoration}
                 alt="orange paper plane"
               />
             </div>
