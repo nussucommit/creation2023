@@ -1,0 +1,8 @@
+# Block all crawlers for the following paths
+User-agent: *
+Disallow: /new
+Disallow: /manage
+
+# Allow all crawlers for the whote site
+User-agent: *
+Allow: /
