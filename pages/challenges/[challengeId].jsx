@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
@@ -16,25 +17,40 @@ function ChallengeDetailPage() {
 
   if (challengeData) {
     return (
-      <PageContainer
-        sectionContents={[
-          <>
-            <div className={styles['title-container']}>
-              <h1 className={kavoon.className}>Challenges</h1>
-              <Image
-                id={styles['challenge-decoration']}
-                src={ChallengeDecoration}
-                alt="orange paper plane"
-              />
-            </div>
-            <div className={styles['challenge-item']}>
-              <h2>{challengeData.title}</h2>
-              <hr />
-              <p>{challengeData.description}</p>
-            </div>
-          </>,
-        ]}
-      />
+      <>
+        <Head>
+          <title>Challenge - CREATION 2023 | NUSSU commIT</title>
+          <link
+            rel="canonical"
+            href={`https://creation2023.nussucommit.com/challenges/${challengeId}`}
+            key="canonical"
+          />
+          <meta
+            name="description"
+            content="Pick your challenge statement in CREATION 2023!"
+            key="description"
+          />
+        </Head>
+        <PageContainer
+          sectionContents={[
+            <>
+              <div className={styles['title-container']}>
+                <h1 className={kavoon.className}>Challenges</h1>
+                <Image
+                  id={styles['challenge-decoration']}
+                  src={ChallengeDecoration}
+                  alt="orange paper plane"
+                />
+              </div>
+              <div className={styles['challenge-item']}>
+                <h2>{challengeData.title}</h2>
+                <hr />
+                <p>{challengeData.description}</p>
+              </div>
+            </>,
+          ]}
+        />
+      </>
     );
   }
 }

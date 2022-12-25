@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import PageContainer from '../../../components/layout/PageContainer';
 import NewAnnouncementForm from '../../../components/announcement/NewAnnouncementForm';
@@ -26,11 +27,18 @@ function AnnouncementManager() {
   };
 
   return (
-    <PageContainer
-      sectionContents={[
-        <NewAnnouncementForm onAddAnnouncement={addAnnouncementHandler} />,
-      ]}
-    />
+    <>
+      <Head>
+        <title>New Announcement - CREATION 2023 | NUSSU commIT</title>
+        <meta name="google" content="nositelinkssearchbox" key="nositelinks" />
+        <meta name="google" content="notranslate" key="notranslate" />
+      </Head>
+      <PageContainer
+        sectionContents={[
+          <NewAnnouncementForm onAddAnnouncement={addAnnouncementHandler} />,
+        ]}
+      />
+    </>
   );
 }
 
