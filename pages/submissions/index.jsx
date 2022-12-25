@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { kavoon } from '../../helper/font-loader';
 import PageContainer from '../../components/layout/PageContainer';
 import SUBMISSIONS from './submissions.json';
 import styles from '../../styles/SubmissionPage.module.scss';
@@ -9,7 +10,7 @@ function SubmissionPage() {
     <PageContainer
       sectionContents={[
         <div className={styles['content-container']}>
-          <h1>Submission</h1>
+          <h1 className={kavoon.className}>Submission</h1>
           {SUBMISSIONS.map((submission) => (
             <Link class={styles['submission-container']} href={submission.link}>
               <img src="submission-icon.svg" alt="submission icon" />

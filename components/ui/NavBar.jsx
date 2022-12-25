@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState, Fragment } from 'react';
 
+import { kavoon } from '../../helper/font-loader';
 import NAVBAR_LINKS, { CHALLENGE_LINKS } from '../../constants/navbarLinks';
 import BREAKPOINTS from '../../constants/breakPoints';
 import styles from './NavBar.module.scss';
@@ -23,7 +24,9 @@ function TopNav() {
 
   return (
     <div className={styles.topnav}>
-      <Link href="/">CREATION 2023</Link>
+      <Link href="/">
+        <span className={kavoon.className}>CREATION 2023</span>
+      </Link>
       {NAVBAR_LINKS.map((link) => {
         const isCurrentPage = pathName.includes(link.path);
 

@@ -1,3 +1,4 @@
+import { kavoon } from '../../helper/font-loader';
 import PageContainer from '../../components/layout/PageContainer';
 import styles from '../../styles/ContactPage.module.scss';
 
@@ -6,7 +7,7 @@ function ContactPage() {
     <PageContainer
       sectionContents={[
         <div className={styles['contact-item']}>
-          <h1>Contact Us</h1>
+          <h1 className={kavoon.className}>Contact Us</h1>
           <p>
             Please submit your inquiry to
             {' '}

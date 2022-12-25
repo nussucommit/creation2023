@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { kavoon } from '../helper/font-loader';
 import PageContainer from '../components/layout/PageContainer';
 import HomePageData from './home-page-data.json';
 import HeroImage from '../public/home-logo.png';
@@ -21,7 +22,7 @@ function HomePage() {
         // Overview of Challenges section
         <div key="challenge-overview" className={styles['content-container']}>
           <div className={styles['title-container']}>
-            <h1>Overview of Challenges</h1>
+            <h1 className={kavoon.className}>Overview of Challenges</h1>
             <Image
               id={styles['challenge-overview-decoration']}
               src={ChallengeDecoration}
@@ -44,7 +45,7 @@ function HomePage() {
 
         // Competition Timeline section
         <div key="competition-timeline" className={styles['content-container']}>
-          <h1>Competition Timeline</h1>
+          <h1 className={kavoon.className}>Competition Timeline</h1>
           {HomePageData['competition-timeline'].map((timeline) => (
             <div
               key={timeline.date}
@@ -72,7 +73,7 @@ function HomePage() {
 
         // Prizes section
         <div key="prizes" className={styles['content-container']}>
-          <h1>Prizes</h1>
+          <h1 className={kavoon.className}>Prizes</h1>
           {HomePageData.prizes.map((prize) => (
             <div key={prize.rank} className={styles['prize-item']}>
               <Image src={ImageTemplate} alt="Prize item" />
@@ -91,7 +92,7 @@ function HomePage() {
           key="partners and sponsors"
           className={styles['content-container']}
         >
-          <h1>Partners</h1>
+          <h1 className={kavoon.className}>Partners</h1>
           <h2>
             <i>Challenge Partners</i>
           </h2>
@@ -114,7 +115,7 @@ function HomePage() {
               alt="Partner logo"
             />
           ))}
-          <h1>Sponsors</h1>
+          <h1 className={kavoon.className}>Sponsors</h1>
           {HomePageData.sponsors.map((sponsor) => (
             <Image
               key={sponsor.id}

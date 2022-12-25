@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+
+import { kavoon } from '../../helper/font-loader';
 import PageContainer from '../../components/layout/PageContainer';
 import CHALLENGES from './challenges.json';
 import styles from '../../styles/ChallengePage.module.scss';
@@ -16,7 +18,7 @@ function ChallengeDetailPage() {
         sectionContents={[
           <>
             <div className={styles['title-container']}>
-              <h1>Challenges</h1>
+              <h1 className={kavoon.className}>Challenges</h1>
               <img
                 id={styles['challenge-decoration']}
                 src="/decorations/paperplane_orange.png"
