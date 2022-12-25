@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -9,19 +10,37 @@ import styles from '../../styles/SubmissionPage.module.scss';
 
 function SubmissionPage() {
   return (
-    <PageContainer
-      sectionContents={[
-        <div className={styles['content-container']}>
-          <h1 className={kavoon.className}>Submission</h1>
-          {SUBMISSIONS.map((submission) => (
-            <Link class={styles['submission-container']} href={submission.link}>
-              <Image src={SubmissionIcon} alt="submission icon" />
-              <h3>{submission.title}</h3>
-            </Link>
-          ))}
-        </div>,
-      ]}
-    />
+    <>
+      <Head>
+        <title>Submission - CREATION 2023 | NUSSU commIT</title>
+        <link
+          rel="canonical"
+          href="https://creation2023.nussucommit.com/submissions"
+          key="canonical"
+        />
+        <meta
+          name="description"
+          content="Submit your masterpiece to win the prize!"
+          key="description"
+        />
+      </Head>
+      <PageContainer
+        sectionContents={[
+          <div className={styles['content-container']}>
+            <h1 className={kavoon.className}>Submission</h1>
+            {SUBMISSIONS.map((submission) => (
+              <Link
+                class={styles['submission-container']}
+                href={submission.link}
+              >
+                <Image src={SubmissionIcon} alt="submission icon" />
+                <h3>{submission.title}</h3>
+              </Link>
+            ))}
+          </div>,
+        ]}
+      />
+    </>
   );
 }
 

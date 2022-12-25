@@ -1,3 +1,5 @@
+import Head from 'next/head';
+
 import { MongoClient } from 'mongodb';
 import PropTypes from 'prop-types';
 
@@ -10,26 +12,41 @@ function AnnouncementPage({ isAuthorized, announcements }) {
   const hasAnnouncement = announcements.length !== 0;
 
   return (
-    <PageContainer
-      sectionContents={[
-        <div>
-          <h1 className={kavoon.className}>Announcements</h1>
-          {hasAnnouncement
-            && announcements.map((announcementData) => (
-              <AnnouncementItem
-                key={announcementData.id}
-                announcementData={announcementData}
-                isEditable={isAuthorized}
-              />
-            ))}
-          {!hasAnnouncement && (
-            <p style={{ textAlign: 'center' }}>
-              No announcement at the moment...
-            </p>
-          )}
-        </div>,
-      ]}
-    />
+    <>
+      <Head>
+        <title>Announcement - CREATION 2023 | NUSSU commIT</title>
+        <link
+          rel="canonical"
+          href="https://creation2023.nussucommit.com/announcements"
+          key="canonical"
+        />
+        <meta
+          name="description"
+          content="Checkout the latest announcement from CREATION 2023 committee!"
+          key="description"
+        />
+      </Head>
+      <PageContainer
+        sectionContents={[
+          <div>
+            <h1 className={kavoon.className}>Announcements</h1>
+            {hasAnnouncement
+              && announcements.map((announcementData) => (
+                <AnnouncementItem
+                  key={announcementData.id}
+                  announcementData={announcementData}
+                  isEditable={isAuthorized}
+                />
+              ))}
+            {!hasAnnouncement && (
+              <p style={{ textAlign: 'center' }}>
+                No announcement at the moment...
+              </p>
+            )}
+          </div>,
+        ]}
+      />
+    </>
   );
 }
 
