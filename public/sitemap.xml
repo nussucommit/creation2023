@@ -1,29 +1,30 @@
 <xml version="1.0" encoding="UTF-8">
-	<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-		<url>
-			<loc>https://creation2023.nussucommit.com</loc>
-			<lastmod>2022-12-29</lastmod>
-		</url>
-		<url>
-			<loc>https://creation2023.nussucommit.com/announcements</loc>
-			<lastmod>2022-12-25</lastmod>
-		</url>
-		<url>
-			<loc>https://creation2023.nussucommit.com/submissions</loc>
-			<lastmod>2022-12-25</lastmod>
-		</url>
-		<url>
-			<loc>https://creation2023.nussucommit.com/rules</loc>
-			<lastmod>2022-12-25</lastmod>
-		</url>
-		<url>
-			<loc>https://creation2023.nussucommit.com/faq</loc>
-			<lastmod>2022-12-25</lastmod>
-		</url>
-		<url>
-			<loc>https://creation2023.nussucommit.com/contacts</loc>
-			<lastmod>2022-12-25</lastmod>
-		</url>
-	</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+		<loc>https://creation2023.nussucommit.com</loc>
+		<lastmod>2022-12-29</lastmod>
+	</url>
+	<url>
+		<loc>https://creation2023.nussucommit.com/announcements</loc>
+		<lastmod>2022-12-25</lastmod>
+	</url>
+	<url>
+		<loc>https://creation2023.nussucommit.com/submissions</loc>
+		<lastmod>2022-12-25</lastmod>
+	</url>
+	<url>
+		<loc>https://creation2023.nussucommit.com/rules</loc>
+		<lastmod>2022-12-25</lastmod>
+	</url>
+	<url>
+		<loc>https://creation2023.nussucommit.com/faq</loc>
+		<lastmod>2022-12-25</lastmod>
+	</url>
+	<url>
+		<loc>https://creation2023.nussucommit.com/contacts</loc>
+		<lastmod>2022-12-25</lastmod>
+	</url>
+</urlset>
 </xml>
    
