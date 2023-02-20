@@ -53,7 +53,9 @@ function RulePage() {
                             <p>{detailTitle}</p>
                             {subdetails.map((subdetail) => (
                               <ul key={subdetail}>
-                                <li>{subdetail}</li>
+                                <li>
+                                  <p>{subdetail}</p>
+                                </li>
                               </ul>
                             ))}
                           </li>
