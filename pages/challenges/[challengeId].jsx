@@ -43,9 +43,26 @@ function ChallengeDetailPage() {
                 />
               </div>
               <div className={styles['challenge-item']}>
+                <h2>
+                  #
+                  {challengeData.id}
+                </h2>
                 <h2>{challengeData.title}</h2>
                 <hr />
-                <p>{challengeData.description}</p>
+                <h2>Overview</h2>
+                <p>{challengeData.overview}</p>
+                <h2>Background</h2>
+                <p>{challengeData.background}</p>
+                <h2>Requirements</h2>
+                <ul>
+                  {challengeData.requirements.split('\n').map((requirement) => (requirement.length > 0 ? (
+                    <li key={requirement}>
+                      <p>{requirement}</p>
+                    </li>
+                  ) : (
+                    <br key={requirement} />
+                  )))}
+                </ul>
               </div>
             </>,
           ]}

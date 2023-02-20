@@ -38,10 +38,6 @@ export const CHALLENGE_LINKS = [
     path: '/challenges/3',
     title: 'Challenge #3',
   },
-  {
-    path: '/challenges/4',
-    title: 'Challenge #4',
-  },
 ];
 
 export default NAVBAR_LINKS;
