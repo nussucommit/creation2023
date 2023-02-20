@@ -53,8 +53,11 @@ function HomePage() {
               <div
                 key={challenge.title}
                 className={styles['challenge-overview-item']}
-              > 
-                <h1>#{index + 1}</h1>
+              >
+                <h1>
+                  #
+                  {index + 1}
+                </h1>
                 <h3>{challenge.title}</h3>
                 <hr />
                 <p>{challenge.description}</p>
@@ -76,7 +79,11 @@ function HomePage() {
               >
                 <h3>
                   {/* Date is emphasized text, slightly larger than $text-md size */}
-                  <strong style={{ fontSize: '35px' }}>{timeline.date}:</strong>{' '}
+                  <strong style={{ fontSize: '35px' }}>
+                    {timeline.date}
+                    :
+                  </strong>
+                  {' '}
                   <span>{timeline.title}</span>
                 </h3>
                 <hr />
@@ -96,14 +103,10 @@ function HomePage() {
             {HomePageData.prizes.map((prize) => (
               <div key={prize.rank} className={styles['prize-item']}>
                 <Image src={ImageTemplate} alt="Prize item" />
-                <h3>{prize.rank}</h3>
-                <p>{prize.name}</p>
+                <h2>{prize.rank}</h2>
+                <h3>{prize.name}</h3>
               </div>
             ))}
-            <div className={styles['prize-item']}>
-              <Image src={ImageTemplate} alt="CV item" />
-              <h3>CV Collection</h3>
-            </div>
           </div>,
 
           // Partners and Sponsors section
