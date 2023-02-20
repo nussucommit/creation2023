@@ -30,10 +30,11 @@ function SubmissionPage() {
             <h1 className={kavoon.className}>Submission</h1>
             {SUBMISSIONS.map((submission) => (
               <Link
-                class={styles['submission-container']}
+                key={submission.title}
+                className={styles['submission-container']}
                 href={submission.link}
               >
-                <Image src={SubmissionIcon} alt="submission icon" />
+                <Image src={SubmissionIcon} alt="submission icon" width="auto" />
                 <h3>{submission.title}</h3>
               </Link>
             ))}
