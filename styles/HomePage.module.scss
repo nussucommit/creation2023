@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   row-gap: $gap-base;
 }
 
@@ -31,6 +31,10 @@
 
 .content-container #challenge-overview-decoration {
   display: none;
+}
+
+.content-container > .challenge-overview-item > h1 {
+  text-align: start;
 }
 
 .content-container > .challenge-overview-item > hr {
@@ -116,8 +120,12 @@
   }
 
   .content-container > .challenge-overview-item {
-    padding: $padding-base calc($padding-base * 8);
-    flex-basis: 50%;
+    padding: $padding-base calc($padding-base * 2);
+    flex-basis: 33%;
+  }
+
+  .content-container > .challenge-overview-item > h3 {
+    height: 150px;
   }
 
   /* Competition Timeline section */

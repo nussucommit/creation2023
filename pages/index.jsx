@@ -26,7 +26,10 @@ function HomePage() {
           content="CREATION is one of NUSSU commIT's annual flagship events, a digital design competition open to all NUS students. CREATION hopes to provide a platform for NUS students to pursue their artistic passion and foster their design skills by tackling real-world problem statements."
           key="description"
         />
-        <meta name="google-site-verification" content="yay-9avF-XbUHf7oHnLDS-iQclGt4xV4dUUdNtS6la4" />
+        <meta
+          name="google-site-verification"
+          content="yay-9avF-XbUHf7oHnLDS-iQclGt4xV4dUUdNtS6la4"
+        />
       </Head>
       <PageContainer
         sectionContents={[
@@ -46,11 +49,12 @@ function HomePage() {
               />
             </div>
 
-            {HomePageData['challenge-overview'].map((challenge) => (
+            {HomePageData['challenge-overview'].map((challenge, index) => (
               <div
                 key={challenge.title}
                 className={styles['challenge-overview-item']}
-              >
+              > 
+                <h1>#{index + 1}</h1>
                 <h3>{challenge.title}</h3>
                 <hr />
                 <p>{challenge.description}</p>
@@ -72,11 +76,7 @@ function HomePage() {
               >
                 <h3>
                   {/* Date is emphasized text, slightly larger than $text-md size */}
-                  <strong style={{ fontSize: '35px' }}>
-                    {timeline.date}
-                    :
-                  </strong>
-                  {' '}
+                  <strong style={{ fontSize: '35px' }}>{timeline.date}:</strong>{' '}
                   <span>{timeline.title}</span>
                 </h3>
                 <hr />
