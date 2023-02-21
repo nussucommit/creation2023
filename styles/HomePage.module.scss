@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   row-gap: $gap-base;
 }
 
@@ -21,6 +21,7 @@
 .content-container > #hero-image {
   width: 70%;
   height: auto;
+  align-self: center;
 }
 
 /* Overview of Challenges section */
