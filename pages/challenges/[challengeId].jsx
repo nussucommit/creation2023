@@ -8,6 +8,7 @@ import ChallengeDecoration from '../../public/decorations/paperplane_orange.png'
 import CHALLENGES from './challenges.json';
 import styles from '../../styles/ChallengePage.module.scss';
 
+/* eslint-disable no-nested-ternary */
 function ChallengeDetailPage() {
   const router = useRouter();
 
@@ -50,18 +51,28 @@ function ChallengeDetailPage() {
                 <h2>{challengeData.title}</h2>
                 <hr />
                 <h2>Overview</h2>
-                <p>{challengeData.overview}</p>
+                {challengeData.overview.split('\n').map((e) => (
+                  <p>{e}</p>
+                ))}
                 <h2>Background</h2>
-                <p>{challengeData.background}</p>
+                {challengeData.background.split('\n').map((paragraph) => (paragraph.includes('\t') ? (
+                  <ul>
+                    {paragraph.split('\t').map((item) => (
+                      <li className={styles['challenge-p-tabbed']}>
+                        <p>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{paragraph}</p>
+                )))}
                 <h2>Requirements</h2>
                 <ul>
-                  {challengeData.requirements.split('\n').map((requirement) => (requirement.length > 0 ? (
-                    <li key={requirement}>
-                      <p>{requirement}</p>
-                    </li>
-                  ) : (
-                    <br key={requirement} />
-                  )))}
+                  {challengeData.requirements.split('\n').map((requirement) => (requirement.length > 0
+                    ? requirement.includes('\t')
+                      ? (requirement.split('\t').map((item) => item.length > 0 && (<li className={styles['challenge-p-tabbed']}><p>{item}</p></li>)))
+                      : (<li key={requirement}><p>{requirement}</p></li>)
+                    : (<br key={requirement} />)))}
                 </ul>
               </div>
             </>,
