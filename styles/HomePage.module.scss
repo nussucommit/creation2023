@@ -69,6 +69,9 @@
   font-weight: normal;
 }
 
+.content-container > .prize-item:nth-child(2), .prize-item:nth-child(4) {
+  margin-top: 5rem;
+}
 /* Partner and Sponsor section */
 .content-container > .partner-item,
 .content-container > .sponsor-item {
@@ -135,4 +138,8 @@
     width: 50%;
     height: auto;
   }
+}
+
+.prize-img {
+  object-fit: contain;
 }

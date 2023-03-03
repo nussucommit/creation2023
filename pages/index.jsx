@@ -8,7 +8,6 @@ import HomePageData from './home-page-data.json';
 import HeroImage from '../public/home-logo.png';
 import ChallengeDecoration from '../public/decorations/paperplane_white.png';
 import TimelineDecoration from '../public/decorations/plants_orange.png';
-import ImageTemplate from '../public/image-template.svg';
 import styles from '../styles/HomePage.module.scss';
 
 function HomePage() {
@@ -104,7 +103,7 @@ function HomePage() {
             <h1 className={kavoon.className}>Prizes</h1>
             {HomePageData.prizes.map((prize) => (
               <div key={prize.rank} className={styles['prize-item']}>
-                <Image src={ImageTemplate} alt="Prize item" />
+                <img src={prize.imageURL} alt="Prize item" height={300} className={styles['prize-img']} />
                 <h2>{prize.rank}</h2>
                 <h3>{prize.name}</h3>
               </div>
@@ -124,18 +123,9 @@ function HomePage() {
               <Image
                 key={partner.id}
                 className={styles['partner-item']}
-                src={ImageTemplate}
-                alt="Partner logo"
-              />
-            ))}
-            <h2>
-              <i>Ecosystem Partners</i>
-            </h2>
-            {HomePageData.partners['Ecosystem Partners'].map((partner) => (
-              <Image
-                key={partner.id}
-                className={styles['partner-item']}
-                src={ImageTemplate}
+                src={partner.imageURL}
+                width={partner.imageHeight}
+                height={partner.imageWidth}
                 alt="Partner logo"
               />
             ))}
@@ -144,7 +134,9 @@ function HomePage() {
               <Image
                 key={sponsor.id}
                 className={styles['sponsor-item']}
-                src={ImageTemplate}
+                src={sponsor.imageURL}
+                width={sponsor.imageWidth}
+                height={sponsor.imageHeight}
                 alt="Sponsor logo"
               />
             ))}

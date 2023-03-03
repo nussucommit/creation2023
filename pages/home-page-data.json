@@ -40,35 +40,27 @@
   ],
   "prizes": [
     {
-      "imageURL": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Dfirst%2BPrize&psig=AOvVaw0ZMOrmh9GNd843xKW1CS6-&ust=1671948151785000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDdga_KkfwCFQAAAAAdAAAAABAE",
+      "imageURL": "https://www.freepnglogos.com/uploads/airpods-png/airpods-pro-airpods-what-the-difference-and-10.png",
+      "rank": "2nd Prize",
+      "name": "Apple Airpod"
+    },
+    {
+      "imageURL": "https://photos5.appleinsider.com/price_guide/ipad-9th-generation-pp-header.png",
       "rank": "1st Prize",
       "name": "Apple iPad"
     },
     {
-      "imageURL": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Dfirst%2BPrize&psig=AOvVaw0ZMOrmh9GNd843xKW1CS6-&ust=1671948151785000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDdga_KkfwCFQAAAAAdAAAAABAE",
-      "rank": "2nd Prize",
-      "name": "Apple iPad"
-    },
-    {
-      "imageURL": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fsearch%3Fq%3Dfirst%2BPrize&psig=AOvVaw0ZMOrmh9GNd843xKW1CS6-&ust=1671948151785000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLDdga_KkfwCFQAAAAAdAAAAABAE",
+      "imageURL": "https://www.seekpng.com/png/full/65-658509_pen-tablet-intuos-m-bluetooth-wacom-ctl-6100wlk.png",
       "rank": "3rd Prize",
-      "name": "Apple iPad"
+      "name": "Wacom Intuos"
     }
   ],
   "partners": {
     "Challenge Partners": [
-      { "id": 1, "imageURL": "image-template.svg" },
-      { "id": 2, "imageURL": "image-template.svg" }
-    ],
-    "Ecosystem Partners": [
-      { "id": 1, "imageURL": "image-template.svg" },
-      { "id": 2, "imageURL": "image-template.svg" }
+      { "id": 1, "imageURL": "/NUS_IT.png", "imageHeight": 416, "imageWidth": 100}
     ]
   },
   "sponsors": [
-    { "id": 1, "imageURL": "image-template.svg" },
-    { "id": 2, "imageURL": "image-template.svg" },
-    { "id": 3, "imageURL": "image-template.svg" },
-    { "id": 4, "imageURL": "image-template.svg" }
+    { "id": 1, "imageURL": "/activezone.png", "imageHeight": 400, "imageWidth": 400 }
   ]
 }
