@@ -1,51 +1,41 @@
 {
   "challenge-overview": [
     {
-      "title": "Design a key visual for motivating and inspiring NUS students in their academics journey",
-      "description": "Create an engaging key visual to inspire and motivate NUS students in embarking and living through their academic journey in NUS. As we approach academic hardships in midterms, project presentations and finals, the designs should boost the morale of the student body to strive and do their best against all odds. The designs will be utilised by NUSSU commIT in shared spaces (i.e. AS8 computer centre) to motivate the student body in their learning journey.",
+      "title": "Digital Phishing Posters (NUS IT)",
+      "description": "Create a poster for NUS IT with a theme of Phishing in its different forms (email, voice calls and SMS).\nPhishing is one of the most common cyberattacks used against organizations today to obtain sensitive information or to deploy malware. These attacks can originate from emails, SMS, WhatsApp (IM) messages or calls.\nYou are to design a poster on phishing that is appealing, impactful and memorable to the NUS community. The poster will be circulated in the campus digitally and physically as part of the University’s security awareness campaign on social engineering.",
       "link": "/challenges/1"
     },
     {
-      "title": "Design fundraising products which expresses emotions through art",
-      "description": "Design artworks to be used in NUSSU commIT 2023 fundraising merchandise. These merchandise should be eye-catching and appeal to the student body, such that the merchandise would be marketable. The design should express the student’s academic life in NUS, with various highs and lows, yet remaining optimistic and tenacious throughout the academic hurdles they face. Sample merchandise include T-Shirts, keychains, tote bags, and mugs. You may also suggest other products beyond the provided examples.",
+      "title": "A Digitalised Omnipresent IT Support Experience",
+      "description": "Create a poster to promote use of self-help channels for IT services.  The theme of the poster is to encourage staff and students to use self-help channels such as ALCA (chatbot), nTouch (self-help IT portal) and IT Care website.  Using self-help means no more queueing (get help immediately without waiting) and getting answers anytime anywhere (no time or physical boundaries) – this brings convenience to our staff and students, and enable them to be more efficient in their work and studies.   The design should also promote awareness of the new IT Care website that has been revamped to allow staff and students to find self-help resources easily. The poster should have a modern look and gives off warm and friendly vibes.",
       "link": "/challenges/2"
     },
     {
-      "title": "Design a poster to encourage NUS student’s interest in IT with commIT",
-      "description": "Create a poster to encourage NUS students' interest in learning IT. The poster should contain the services and events of commIT and how NUS students can use them to start on their learning journey and get equipped with the necessary IT knowledge. CREATION 2023 invites you to submit your design concepts of the poster for the next generation of commIT. Your design should consider the integration of technology, functionality and aesthetics.",
+      "title": "Social Media ‘Influencers’ Impact",
+      "description": "The rapid growth of social media has enabled people to spread their stories to a wide reach of audience. Some people are aptly termed 'influencers', indicating that their lifestyle can bring about influence to their audience. There are both positive and negative impacts that us audiences might or might not realize.\nIn this poster, you can research some of the negative impacts, and how to mitigate them when we are using social media. Your poster should include relevant research data and eye catching visuals that support the delivery of the message. Your poster should revolve around the general theme of mental health, especially for students.",
       "link": "/challenges/3"
     }
   ],
   "competition-timeline": [
     {
-      "date": "17 JAN",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "date": "3 Mar",
+      "title": "Open Registration and Release of Challenge Statement",
+      "description": ""
     },
     {
-      "date": "29 JAN",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "date": "19 Mar",
+      "title": "Deadline of Submission",
+      "description": ""
     },
     {
-      "date": "5 FEB",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "date": "22 Mar",
+      "title": "Announcement of Finalists",
+      "description": ""
     },
     {
-      "date": "6 MAR",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-    },
-    {
-      "date": "9 MAR",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-    },
-    {
-      "date": "12 MAR",
-      "title": "Lorem Ipsum",
-      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+      "date": "25 Mar",
+      "title": "Closing Ceremony",
+      "description": ""
     }
   ],
   "prizes": [
