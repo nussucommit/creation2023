@@ -74,6 +74,23 @@ function ChallengeDetailPage() {
                       : (<li key={requirement}><p>{requirement}</p></li>)
                     : (<br key={requirement} />)))}
                 </ul>
+                <h2>Prizes</h2>
+                <ul>
+                  {
+                  challengeData.prizes.map((prize) => (
+                    <li>
+                      <p>
+                        <strong>
+                          {prize.place}
+                          :
+                          {' '}
+                          {prize.name}
+                        </strong>
+                      </p>
+                    </li>
+                  ))
+                }
+                </ul>
               </div>
             </>,
           ]}
