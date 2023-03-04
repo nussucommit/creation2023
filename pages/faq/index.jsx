@@ -38,7 +38,7 @@ function FAQPage() {
             {faqs.map((faq) => (
               <div key={faq.question} className={styles['faq-item']}>
                 <div className={styles['faq-question']}>
-                  <Image src={QuestionDecoration} alt="qustion" />
+                  <Image src={QuestionDecoration} alt="qustion" width={25} />
                   <div>
                     <h2>{faq.question}</h2>
                     {faq.answers.map((answer) => (
