@@ -33,6 +33,7 @@ function SubmissionPage() {
                 key={submission.title}
                 className={styles['submission-container']}
                 href={submission.link}
+                target="_blank"
               >
                 <Image src={SubmissionIcon} alt="submission icon" width="auto" />
                 <h3>{submission.title}</h3>
