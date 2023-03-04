@@ -19,23 +19,19 @@
   "competition-timeline": [
     {
       "date": "3 Mar",
-      "title": "Open Registration and Release of Challenge Statement",
-      "description": ""
+      "title": "Open Registration and Release of Challenge Statement"
     },
     {
       "date": "19 Mar",
-      "title": "Deadline of Submission",
-      "description": ""
+      "title": "Deadline of Submission"
     },
     {
       "date": "22 Mar",
-      "title": "Announcement of Finalists",
-      "description": ""
+      "title": "Announcement of Finalists"
     },
     {
       "date": "25 Mar",
-      "title": "Closing Ceremony",
-      "description": ""
+      "title": "Closing Ceremony"
     }
   ],
   "prizes": [

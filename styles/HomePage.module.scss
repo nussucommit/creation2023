@@ -47,6 +47,11 @@
 }
 
 /* Competition Timeline section */
+.content-container > .competition-timeline-item {
+  padding: $padding-base;
+  flex-basis: 100%;
+}
+  
 .content-container > .competition-timeline-item > hr {
   border: $divider-thin solid $primary-text-color;
 }
@@ -104,6 +109,11 @@
   }
 
   /* Competition Timeline section */
+  /* Competition Timeline section */
+  .content-container > .competition-timeline-item {
+    flex-basis: 50%;
+  }
+
   .content-container > #competition-timeline-decoration {
     width: 60%;
     height: auto;
@@ -133,7 +143,7 @@
   /* Competition Timeline section */
   .content-container > .competition-timeline-item {
     padding: $padding-base calc($padding-base * 4);
-    flex-basis: 33%;
+    flex-basis: 25%;
   }
 
   .content-container > #competition-timeline-decoration {

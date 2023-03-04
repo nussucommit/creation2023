@@ -80,14 +80,11 @@ function HomePage() {
                   {/* Date is emphasized text, slightly larger than $text-md size */}
                   <strong style={{ fontSize: '35px' }}>
                     {timeline.date}
-                    :
                   </strong>
-                  {' '}
-                  <span>{timeline.title}</span>
                 </h3>
                 <hr />
-                {timeline.description.length > 0 && (
-                  <p>{timeline.description}</p>
+                {timeline.title.length > 0 && (
+                  <h4>{timeline.title}</h4>
                 )}
               </div>
             ))}
