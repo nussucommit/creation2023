@@ -61,6 +61,6 @@
     ]
   },
   "sponsors": [
-    { "id": 1, "imageURL": "/activezone.png", "imageHeight": 400, "imageWidth": 400 }
+    { "id": 1, "imageURL": "/active_zone.png", "imageHeight": 400, "imageWidth": 400 }
   ]
 }
