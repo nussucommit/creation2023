@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 import { kavoon } from '../helper/font-loader';
 import PageContainer from '../components/layout/PageContainer';
@@ -11,6 +12,23 @@ import TimelineDecoration from '../public/decorations/plants_orange.png';
 import styles from '../styles/HomePage.module.scss';
 
 function HomePage() {
+  const [prizes, setPrizes] = useState(HomePageData.prizes);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 600) {
+        setPrizes([HomePageData.prizes[1], HomePageData.prizes[0], HomePageData.prizes[2]]);
+      } else {
+        setPrizes(HomePageData.prizes);
+      }
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <Head>
@@ -98,7 +116,7 @@ function HomePage() {
           // Prizes section
           <div key="prizes" className={styles['content-container']}>
             <h1 className={kavoon.className}>Prizes</h1>
-            {HomePageData.prizes.map((prize) => (
+            {prizes.map((prize) => (
               <div key={prize.rank} className={styles['prize-item']}>
                 <img src={prize.imageURL} alt="Prize item" height={300} className={styles['prize-img']} />
                 <h2>{prize.rank}</h2>

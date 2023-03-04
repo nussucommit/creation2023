@@ -36,17 +36,17 @@
   ],
   "prizes": [
     {
-      "imageURL": "https://www.freepnglogos.com/uploads/airpods-png/airpods-pro-airpods-what-the-difference-and-10.png",
-      "rank": "2nd Prize",
-      "name": "Apple Airpod"
-    },
-    {
-      "imageURL": "https://photos5.appleinsider.com/price_guide/ipad-9th-generation-pp-header.png",
+      "imageURL": "first_prize.png",
       "rank": "1st Prize",
       "name": "Apple iPad"
     },
     {
-      "imageURL": "https://www.seekpng.com/png/full/65-658509_pen-tablet-intuos-m-bluetooth-wacom-ctl-6100wlk.png",
+      "imageURL": "second_prize.png",
+      "rank": "2nd Prize",
+      "name": "Apple Airpod"
+    },
+    {
+      "imageURL": "third_prize.png",
       "rank": "3rd Prize",
       "name": "Wacom Intuos"
     }
