@@ -76,6 +76,7 @@
 .content-container > .partner-item,
 .content-container > .sponsor-item {
   width: 100%;
+  height: auto;
 }
 
 /* Small screen view */
@@ -94,6 +95,7 @@
   .content-container > .partner-item,
   .content-container > .sponsor-item {
     width: 30%;
+    height: auto;
   }
 
   .content-container > .partner-item,
