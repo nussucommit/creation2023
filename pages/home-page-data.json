@@ -37,18 +37,23 @@
   "prizes": [
     {
       "imageURL": "first_prize.png",
-      "rank": "1st Prize",
+      "rank": "Apple iPad",
       "name": "Apple iPad"
     },
     {
       "imageURL": "second_prize.png",
-      "rank": "2nd Prize",
+      "rank": "Apple Airpod",
       "name": "Apple Airpod"
     },
     {
       "imageURL": "third_prize.png",
-      "rank": "3rd Prize",
+      "rank": "Wacom Intuos",
       "name": "Wacom Intuos"
+    },
+    {
+      "imageURL": "takashimaya.png",
+      "rank": "Takashimaya Vouchers",
+      "name": "Takashimaya Vouchers"
     }
   ],
   "partners": {

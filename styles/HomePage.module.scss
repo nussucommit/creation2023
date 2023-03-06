@@ -19,8 +19,9 @@
 
 /* Hero section */
 .content-container > #hero-image {
-  width: 70%;
+  width: 40%;
   height: auto;
+  max-width: 20rem;
   align-self: center;
 }
 
@@ -84,6 +85,23 @@
   height: auto;
 }
 
+/* Partner and Sponsor section */
+.content-container > .partners-sponsors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -10rem;
+  min-width: 80%;
+  padding: 0 2rem;
+  
+  > .partner-item, .sponsor-item {
+    width: 100%;
+    height: auto;
+    padding: 0 $padding-base;
+  }
+}
+
 /* Small screen view */
 @media only screen and (min-width: $sm) {
   /* Prizes section */
@@ -93,19 +111,7 @@
 
   .content-container > .prize-item {
     padding: $padding-base;
-    flex-basis: 25%;
-  }
-
-  /* Partner and Sponsor section */
-  .content-container > .partner-item,
-  .content-container > .sponsor-item {
-    width: 30%;
-    height: auto;
-  }
-
-  .content-container > .partner-item,
-  .content-container > .sponsor-item {
-    padding: 0 $padding-base;
+    flex-basis: 26%;
   }
 
   /* Competition Timeline section */
@@ -117,6 +123,14 @@
   .content-container > #competition-timeline-decoration {
     width: 60%;
     height: auto;
+  }
+
+  .content-container > .partners-sponsors {
+    flex-direction: row;
+    
+    > .partner-item, .sponsor-item {
+      width: 40%;
+    }
   }
 }
 
@@ -149,6 +163,14 @@
   .content-container > #competition-timeline-decoration {
     width: 50%;
     height: auto;
+  }
+
+  .content-container > .partners-sponsors {
+    flex-direction: row;
+    
+    > .partner-item, .sponsor-item {
+      width: 40%;
+    }
   }
 }
 

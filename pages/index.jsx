@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { kavoon } from '../helper/font-loader';
 import PageContainer from '../components/layout/PageContainer';
 import HomePageData from './home-page-data.json';
-import HeroImage from '../public/home-logo.png';
+import HeroImage from '../public/home-logo-without-subs.png';
 import ChallengeDecoration from '../public/decorations/paperplane_white.png';
 import TimelineDecoration from '../public/decorations/plants_orange.png';
 import styles from '../styles/HomePage.module.scss';
@@ -17,7 +17,8 @@ function HomePage() {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth > 600) {
-        setPrizes([HomePageData.prizes[1], HomePageData.prizes[0], HomePageData.prizes[2]]);
+        setPrizes([HomePageData.prizes[1], HomePageData.prizes[0], HomePageData.prizes[2],
+          HomePageData.prizes[3]]);
       } else {
         setPrizes(HomePageData.prizes);
       }
@@ -118,9 +119,9 @@ function HomePage() {
             <h1 className={kavoon.className}>Prizes</h1>
             {prizes.map((prize) => (
               <div key={prize.rank} className={styles['prize-item']}>
-                <img src={prize.imageURL} alt="Prize item" height={300} className={styles['prize-img']} />
+                <img src={prize.imageURL} alt="Prize item" height={200} className={styles['prize-img']} />
                 <h2>{prize.rank}</h2>
-                <h3>{prize.name}</h3>
+                {/* <h3>{prize.name}</h3> */}
               </div>
             ))}
           </div>,
@@ -130,31 +131,29 @@ function HomePage() {
             key="partners and sponsors"
             className={styles['content-container']}
           >
-            <h1 className={kavoon.className}>Partners</h1>
-            <h2>
-              <i>Challenge Partners</i>
-            </h2>
-            {HomePageData.partners['Challenge Partners'].map((partner) => (
-              <Image
-                key={partner.id}
-                className={styles['partner-item']}
-                src={partner.imageURL}
-                width={partner.imageHeight}
-                height={partner.imageWidth}
-                alt="Partner logo"
-              />
-            ))}
-            <h1 className={kavoon.className}>Sponsors</h1>
-            {HomePageData.sponsors.map((sponsor) => (
-              <Image
-                key={sponsor.id}
-                className={styles['sponsor-item']}
-                src={sponsor.imageURL}
-                width={sponsor.imageWidth}
-                height={sponsor.imageHeight}
-                alt="Sponsor logo"
-              />
-            ))}
+            <h1 className={kavoon.className}>Partners & Sponsors</h1>
+            <div className={styles['partners-sponsors']}>
+              {HomePageData.partners['Challenge Partners'].map((partner) => (
+                <Image
+                  key={partner.id}
+                  className={styles['partner-item']}
+                  src={partner.imageURL}
+                  width={partner.imageHeight}
+                  height={partner.imageWidth}
+                  alt="Partner logo"
+                />
+              ))}
+              {HomePageData.sponsors.map((sponsor) => (
+                <Image
+                  key={sponsor.id}
+                  className={styles['sponsor-item']}
+                  src={sponsor.imageURL}
+                  width={sponsor.imageWidth}
+                  height={sponsor.imageHeight}
+                  alt="Sponsor logo"
+                />
+              ))}
+            </div>
           </div>,
         ]}
       />
